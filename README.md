@@ -72,7 +72,6 @@ void MainScene::testHttpImageRequest(Vec2 position) {
     request->release();
 }
 ```
----
 ```
 // Test internet
 if (InternetStatus::isConnected()) {
@@ -80,4 +79,76 @@ if (InternetStatus::isConnected()) {
 } else {
     InternetStatus::toastMessage("Please connect internet");
 }
+```
+---
+
+
+## UI setup
+```
+// Light slider
+auto slider = ui::Slider::create();
+const auto sliderScale = 2;
+slider->loadBarTexture("ui/slider_background.png");
+slider->loadProgressBarTexture("ui/slider_foreground.png");
+slider->loadSlidBallTextureNormal("ui/slider_thumb_normal.png");
+//slider->loadSlidBallTextures("ui/slider_thumb_normal.png", "ui/slider_thumb_pressed.png", "ui/slider_thumb_disabled.png");
+slider->setScale(sliderScale);
+slider->setPosition(Vec2(
+    origin.x + size.width/2, 
+    origin.y + slider->getContentSize().height/2 * sliderScale + margin.y*1.5));
+slider->setZoomScale(0.4);
+slider->setPercent(50);
+this->addChild(slider);
+
+// Share button
+auto shareButton = ui::Button::create();
+const auto shareScale = 2;
+shareButton->loadTextureNormal("ui/share_button.png");
+shareButton->setPressedActionEnabled(true);
+shareButton->setZoomScale(0.3);
+shareButton->setScale(shareScale);
+shareButton->setPosition(Vec2(
+    origin.x + size.width - shareButton->getContentSize().width/2 * shareScale - margin.x,
+    origin.y + shareButton->getContentSize().height/2 * shareScale + margin.y));
+this->addChild(shareButton);
+
+// Stats button
+auto statsButton = ui::Button::create();
+const auto statsScale = 2;
+statsButton->loadTextureNormal("ui/stats_button.png");
+statsButton->setPressedActionEnabled(true);
+statsButton->setZoomScale(0.3);
+statsButton->setScale(statsScale);
+statsButton->setPosition(Vec2(
+    origin.x + statsButton->getContentSize().width/2 * statsScale + margin.x,
+    origin.y + size.height - statsButton->getContentSize().height/2 * statsScale - margin.y));
+this->addChild(statsButton);
+
+// Fertilizer button
+auto fertilizerButton = ui::Button::create();
+const auto fertilizerScale = 2;
+const auto fertilizerMarginTop = margin.y * 2;
+fertilizerButton->loadTextureNormal("ui/fertilizer_button.png");
+fertilizerButton->setPressedActionEnabled(true);
+fertilizerButton->setZoomScale(0.3);
+fertilizerButton->setScale(fertilizerScale);
+fertilizerButton->setPosition(Vec2(
+    origin.x + fertilizerButton->getContentSize().width/2 * fertilizerScale + margin.x,
+    statsButton->getPositionY() - statsButton->getContentSize().height/2 * statsScale 
+    - fertilizerButton->getContentSize().height/2 * fertilizerScale - fertilizerMarginTop));
+this->addChild(fertilizerButton);
+
+// Water button
+auto waterButton = ui::Button::create();
+const auto waterScale = 2;
+const auto waterMarginTop = margin.y * 2;
+waterButton->loadTextureNormal("ui/water_button.png");
+waterButton->setPressedActionEnabled(true);
+waterButton->setZoomScale(0.3);
+waterButton->setScale(waterScale);
+waterButton->setPosition(Vec2(
+    origin.x + waterButton->getContentSize().width/2 * waterScale + margin.x,
+    fertilizerButton->getPositionY() - fertilizerButton->getContentSize().height/2 * fertilizerScale 
+    - waterButton->getContentSize().height/2 * waterScale - waterMarginTop));
+this->addChild(waterButton);
 ```
