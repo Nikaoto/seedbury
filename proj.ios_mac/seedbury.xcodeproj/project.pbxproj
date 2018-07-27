@@ -17,6 +17,7 @@
 		1AF87B8B1F6F782A007BE51C /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1AF87B5E1F6F77D6007BE51C /* RootViewController.mm */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2422432B210B251B00A09A30 /* Land.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2422432A210B251A00A09A30 /* Land.cpp */; };
 		24EA4CDE2108B6E40080AB0F /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24EA4CDA2108B6E40080AB0F /* MainScene.cpp */; };
 		24EA4CE82108BC4B0080AB0F /* ui in Resources */ = {isa = PBXBuildFile; fileRef = 24EA4CE72108BC4B0080AB0F /* ui */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
@@ -111,6 +112,8 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* seedbury-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "seedbury-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		24224329210B251A00A09A30 /* Land.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Land.h; sourceTree = "<group>"; };
+		2422432A210B251A00A09A30 /* Land.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Land.cpp; sourceTree = "<group>"; };
 		24EA4CDA2108B6E40080AB0F /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
 		24EA4CDC2108B6E40080AB0F /* InternetStatus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = InternetStatus.hpp; sourceTree = "<group>"; };
 		24EA4CDD2108B6E40080AB0F /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
@@ -284,6 +287,8 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2422432A210B251A00A09A30 /* Land.cpp */,
+				24224329210B251A00A09A30 /* Land.h */,
 				24EA4CDC2108B6E40080AB0F /* InternetStatus.hpp */,
 				24EA4CDA2108B6E40080AB0F /* MainScene.cpp */,
 				24EA4CDD2108B6E40080AB0F /* MainScene.h */,
@@ -450,6 +455,7 @@
 			files = (
 				1AF87B781F6F77F7007BE51C /* AppController.mm in Sources */,
 				1AF87B8B1F6F782A007BE51C /* RootViewController.mm in Sources */,
+				2422432B210B251B00A09A30 /* Land.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				1AF87B8A1F6F7822007BE51C /* main.m in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,

@@ -222,6 +222,7 @@ dependencies: \
   /Users/nika/Desktop/seedbury/proj.ios_mac/ios/Prefix.pch \
   /Users/nika/Desktop/seedbury/Classes/MainScene.cpp \
   /Users/nika/Desktop/seedbury/Classes/MainScene.h \
+  /Users/nika/Desktop/seedbury/Classes/Land.h \
   /Users/nika/Desktop/seedbury/proj.ios_mac/../cocos2d/cocos/ui/CocosGUI.h \
   /Users/nika/Desktop/seedbury/proj.ios_mac/../cocos2d/cocos/ui/UIWidget.h \
   /Users/nika/Desktop/seedbury/proj.ios_mac/../cocos2d/cocos/ui/UILayoutParameter.h \

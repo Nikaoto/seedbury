@@ -223,4 +223,5 @@ dependencies: \
   /Users/nika/Desktop/seedbury/Classes/AppDelegate.cpp \
   /Users/nika/Desktop/seedbury/Classes/AppDelegate.h \
   /Users/nika/Desktop/seedbury/Classes/MainScene.h \
+  /Users/nika/Desktop/seedbury/Classes/Land.h \
   /Users/nika/Desktop/seedbury/Classes/HelloWorldScene.h

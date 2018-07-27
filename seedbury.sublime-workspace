@@ -625,6 +625,58 @@
 		"selected_items":
 		[
 			[
+				"reload",
+				"SublimeLinter: Reload SublimeLinter and its Plugins"
+			],
+			[
+				"remove pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"sublimlinter",
+				"SublimeLinter: Reload SublimeLinter and its Plugins"
+			],
+			[
+				"toggle hi",
+				"SublimeLinter: Toggle Highlights"
+			],
+			[
+				"sublimelinter",
+				"SublimeLinter: Toggle Highlights"
+			],
+			[
+				"setsyntax",
+				"Set Syntax: C++"
+			],
+			[
+				"refresh",
+				"Project: Refresh Folders"
+			],
+			[
+				"package isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings"
+			],
+			[
+				"key bin",
+				"Preferences: Key Bindings"
+			],
+			[
+				"key bind",
+				"Preferences: Terminal Key Bindings – User"
+			],
+			[
+				"project",
+				"Project: Refresh Folders"
+			],
+			[
 				"settings",
 				"Preferences: Settings – Syntax Specific"
 			],
@@ -637,20 +689,12 @@
 				"Set Syntax: JSON"
 			],
 			[
-				"remove pack",
-				"Package Control: Remove Package"
-			],
-			[
 				"regex",
 				"PersistentRegexHighlight: Highlight All Files"
 			],
 			[
 				"persistentregex",
 				"PersistentRegexHighlight: Highlight All Files"
-			],
-			[
-				"install ",
-				"Package Control: Install Package"
 			],
 			[
 				"regexhi",
@@ -665,20 +709,8 @@
 				"UI: Select Color Scheme"
 			],
 			[
-				"sublimelinter",
-				"Preferences: SublimeLinter Key Bindings"
-			],
-			[
 				"love",
 				"Set Syntax: Lua (Love)"
-			],
-			[
-				"key",
-				"Preferences: Key Bindings"
-			],
-			[
-				"key bind",
-				"Preferences: Terminal Key Bindings – User"
 			],
 			[
 				"lower",
@@ -755,10 +787,6 @@
 			[
 				"list ",
 				"Package Control: List Packages"
-			],
-			[
-				"key bin",
-				"Preferences: Key Bindings"
 			],
 			[
 				"ui them",
@@ -963,6 +991,9 @@
 	},
 	"file_history":
 	[
+		"/Users/nika/Desktop/seedbury/README.md",
+		"/Users/nika/Desktop/seedbury/Classes/MainScene.cpp",
+		"/Users/nika/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
 		"/D/CocosGames/Bguja/Classes/AppDelegate.cpp",
 		"/D/CocosGames/Bguja/Classes/HelloWorldScene.h",
 		"/D/CocosGames/Bguja/bguja.sublime-project",
@@ -1087,14 +1118,11 @@
 		"/C/Users/Nika/Desktop/t/test_main.py",
 		"/E/documents/PyProjects/30-Woffline/config.py",
 		"/E/Documents/PyProjects/30-Woffline/res/_jquery.min.js",
-		"/E/documents/PyProjects/30-Woffline/README.md",
-		"/D/slami/README.md",
-		"/D/slami/client/src/config.js",
-		"/E/Documents/PyProjects/30-Woffline/config.py"
+		"/E/documents/PyProjects/30-Woffline/README.md"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -1108,6 +1136,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"internet",
+			"internetstatus",
 			"rect",
 			"__HELLOWORLD_SCENE_H__"
 		],
@@ -1188,6 +1218,38 @@
 		"selected_items":
 		[
 			[
+				"mainscene",
+				"Classes/MainScene.h"
+			],
+			[
+				"main",
+				"Classes/MainScene.cpp"
+			],
+			[
+				"",
+				"Classes/Land.cpp"
+			],
+			[
+				"Land",
+				"Classes/Land.cpp"
+			],
+			[
+				"land",
+				"Classes/Land.h"
+			],
+			[
+				"readm",
+				"README.md"
+			],
+			[
+				"Mainsce",
+				"Classes/MainScene.cpp"
+			],
+			[
+				"readme",
+				"README.md"
+			],
+			[
 				"appdele",
 				"Classes\\AppDelegate.h"
 			],
@@ -1218,10 +1280,6 @@
 			[
 				"test_ur",
 				"test\\test_url_util.py"
-			],
-			[
-				"readme",
-				"README.md"
 			],
 			[
 				"confi",
@@ -1284,10 +1342,6 @@
 				"App.js"
 			],
 			[
-				"",
-				"App.js"
-			],
-			[
 				"capturebu",
 				"components\\CaptureButton.js"
 			],
@@ -1298,10 +1352,6 @@
 			[
 				"contro",
 				"controls.lua"
-			],
-			[
-				"main",
-				"main.lua"
 			],
 			[
 				"enemyb",
@@ -1512,10 +1562,6 @@
 				"src\\components\\AppStoreButton\\AppStoreButton.js"
 			],
 			[
-				"land",
-				"src\\components\\LandingBody\\LandingBody.css"
-			],
-			[
 				"appstore",
 				"src\\components\\AppStoreButton\\AppStoreButton.css"
 			],
@@ -1590,7 +1636,7 @@
 	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 235.0,
 	"status_bar_visible": true,
 	"template_settings":
