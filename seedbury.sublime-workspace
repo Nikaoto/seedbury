@@ -1,0 +1,1599 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"goup",
+				"goup_count"
+			],
+			[
+				"current",
+				"current_url"
+			],
+			[
+				"curre",
+				"current_url"
+			],
+			[
+				"curr",
+				"current_depth"
+			],
+			[
+				"fun",
+				"function\tfunction"
+			],
+			[
+				"get",
+				"get_origin_url"
+			],
+			[
+				"css",
+				"css_url"
+			],
+			[
+				"sty",
+				"style"
+			],
+			[
+				"relative",
+				"relative_save_folder"
+			],
+			[
+				"qui",
+				"quotation_marks"
+			],
+			[
+				"remove",
+				"remove_trailing_string"
+			],
+			[
+				"origin",
+				"origin_url"
+			],
+			[
+				"stream",
+				"stream_file_to"
+			],
+			[
+				"save",
+				"save_path"
+			],
+			[
+				"ecsa",
+				"escape_next"
+			],
+			[
+				"esca",
+				"escape_next"
+			],
+			[
+				"file",
+				"filesystem"
+			],
+			[
+				"C",
+				"CONTROLS_JSON_PATH"
+			],
+			[
+				"JSON",
+				"CONTROLS_JSON_PATH"
+			],
+			[
+				"ge",
+				"getX"
+			],
+			[
+				"collision",
+				"collision_data"
+			],
+			[
+				"closed",
+				"hand_closed_sprite"
+			],
+			[
+				"blue_",
+				"blue_sprite_path"
+			],
+			[
+				"sha",
+				"shattered"
+			],
+			[
+				"fu",
+				"function\tfunction"
+			],
+			[
+				"shatered",
+				"shattered_light_alpha"
+			],
+			[
+				"light",
+				"light_alpha"
+			],
+			[
+				"position",
+				"positionTop"
+			],
+			[
+				"positio",
+				"positionTopPercent"
+			],
+			[
+				"camera",
+				"Camera"
+			],
+			[
+				"up",
+				"up_url"
+			],
+			[
+				"salsh",
+				"slash_indexes"
+			],
+			[
+				"slash",
+				"slash_indexes"
+			],
+			[
+				"origi",
+				"origin_url"
+			],
+			[
+				"is_",
+				"is_url"
+			],
+			[
+				"is_url",
+				"is_url_fragment"
+			],
+			[
+				"is_ur",
+				"is_url_fragment"
+			],
+			[
+				"download_",
+				"download_css"
+			],
+			[
+				"MAX",
+				"MAX_CONTROL_SWING_SPEED"
+			],
+			[
+				"control_",
+				"control_swing_speed"
+			],
+			[
+				"hamemr",
+				"hammer_y"
+			],
+			[
+				"screen",
+				"screen_scale"
+			],
+			[
+				"max_spawn",
+				"max_spawn_x"
+			],
+			[
+				"max_",
+				"max_spawn_y"
+			],
+			[
+				"nex",
+				"next_y"
+			],
+			[
+				"next",
+				"next_x"
+			],
+			[
+				"DASH",
+				"DASH_COOLDOWN"
+			],
+			[
+				"build",
+				"build_timer"
+			],
+			[
+				"AGGRO",
+				"AGGRO_MOVE_SPEED"
+			],
+			[
+				"aggro",
+				"aggro_move_speed"
+			],
+			[
+				"flas",
+				"false"
+			],
+			[
+				"h",
+				"HEIGHT"
+			],
+			[
+				"swing",
+				"swing_accuracy"
+			],
+			[
+				"turn_",
+				"turn_timer"
+			],
+			[
+				"obj",
+				"objects"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"sprite_scale",
+				"sprite_scale_x"
+			],
+			[
+				"sprite_",
+				"sprite_width"
+			],
+			[
+				"mouse",
+				"mouse_y"
+			],
+			[
+				"muse",
+				"mouse_x"
+			],
+			[
+				"sca",
+				"scale"
+			],
+			[
+				"sound",
+				"sound_name"
+			],
+			[
+				"so",
+				"sound_name"
+			],
+			[
+				"move",
+				"move_direction"
+			],
+			[
+				"run_sprite",
+				"run_sprite_height"
+			],
+			[
+				"turn_ti",
+				"turn_timer_tag"
+			],
+			[
+				"player",
+				"player_turn"
+			],
+			[
+				"ob",
+				"objects"
+			],
+			[
+				"cor",
+				"corpse_indexes"
+			],
+			[
+				"sla",
+				"slash_time"
+			],
+			[
+				"sprite",
+				"sprite_size"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"dir",
+				"direction"
+			],
+			[
+				"sheet",
+				"sheet_width"
+			],
+			[
+				"scale",
+				"scale_x"
+			],
+			[
+				"m",
+				"moving"
+			],
+			[
+				"actua",
+				"actual_height"
+			],
+			[
+				"spri",
+				"sprite_size"
+			],
+			[
+				"grid",
+				"grid_size"
+			],
+			[
+				"play",
+				"player_y"
+			],
+			[
+				"pla",
+				"player_y"
+			],
+			[
+				"s",
+				"self"
+			],
+			[
+				"CROSS",
+				"CROSSHAIR_SEGMENTS"
+			],
+			[
+				"set",
+				"setLinearVelocity"
+			],
+			[
+				"body",
+				"body_swing_speed"
+			],
+			[
+				"handle",
+				"handle_angular_damping"
+			],
+			[
+				"hist",
+				"history_entry_limit"
+			],
+			[
+				"new_",
+				"new_entry"
+			],
+			[
+				"entr",
+				"entries"
+			],
+			[
+				"histo",
+				"history_file_name"
+			],
+			[
+				"history",
+				"history_entry_limit"
+			],
+			[
+				"histr",
+				"history_entry_limit"
+			],
+			[
+				"HISTORY",
+				"HISTORY_ENTRY_LIMIT"
+			],
+			[
+				"ent",
+				"entries"
+			],
+			[
+				"req",
+				"req_currency_value"
+			],
+			[
+				"er",
+				"error_code"
+			],
+			[
+				"history_file",
+				"history_file_name"
+			],
+			[
+				"req_",
+				"req_currency_value"
+			],
+			[
+				"check",
+				"check_history_exists"
+			],
+			[
+				"passed",
+				"passed_history_file_name"
+			],
+			[
+				"his",
+				"history"
+			],
+			[
+				"init",
+				"initialized"
+			],
+			[
+				"pass",
+				"passed_api_url"
+			],
+			[
+				"error",
+				"error_info"
+			],
+			[
+				"base",
+				"base_currency"
+			],
+			[
+				"exec",
+				"execQueue"
+			],
+			[
+				"draw",
+				"draw_rectangle"
+			],
+			[
+				"key",
+				"keygroup"
+			],
+			[
+				"sender_",
+				"sender_email"
+			],
+			[
+				"extra",
+				"extra_student_count"
+			],
+			[
+				"lec",
+				"lecturer_name"
+			],
+			[
+				"mousePos",
+				"mousePosition"
+			],
+			[
+				"ran",
+				"randomSoundMetaTable"
+			],
+			[
+				"images",
+				"imagesEndpoint"
+			],
+			[
+				"thumb",
+				"thumbnailUrl"
+			],
+			[
+				"clas",
+				"className"
+			],
+			[
+				"styl",
+				"styles"
+			],
+			[
+				"compi",
+				"compiledLine"
+			],
+			[
+				"com",
+				"compiledLine"
+			],
+			[
+				"arr",
+				"arrow_function_lua_post"
+			],
+			[
+				"var",
+				"varname"
+			],
+			[
+				"sco",
+				"scopeCount"
+			],
+			[
+				"arro",
+				"arrow_function"
+			],
+			[
+				"arrow",
+				"arrow_function_lua_pre"
+			],
+			[
+				"sendSc",
+				"sendScrapeRequest"
+			],
+			[
+				"S3",
+				"S3_BUCKET_NAME"
+			],
+			[
+				"canv",
+				"canvas_size"
+			],
+			[
+				"vide",
+				"videoPlayer"
+			]
+		]
+	},
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					""
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"Love2D"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"ldoc: File"
+				],
+				[
+					"Packages/Lua Love/LuaLove.sublime-build",
+					"ldoc: Project"
+				]
+			],
+			[
+				"Packages/Lua Love/LuaLove.sublime-build",
+				"Love2D"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Lua/Lua.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeLove/Love.sublime-build",
+					""
+				],
+				[
+					"Packages/User/love2d.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/SublimeLove/Love.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 71.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"settings",
+				"Preferences: Settings – Syntax Specific"
+			],
+			[
+				"setting",
+				"Preferences: Settings"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"remove pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"regex",
+				"PersistentRegexHighlight: Highlight All Files"
+			],
+			[
+				"persistentregex",
+				"PersistentRegexHighlight: Highlight All Files"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"regexhi",
+				"PersistentRegexHighlight: Highlight All Files"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"theme",
+				"UI: Select Color Scheme"
+			],
+			[
+				"sublimelinter",
+				"Preferences: SublimeLinter Key Bindings"
+			],
+			[
+				"love",
+				"Set Syntax: Lua (Love)"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings"
+			],
+			[
+				"key bind",
+				"Preferences: Terminal Key Bindings – User"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"linter",
+				"SublimeLinter: Toggle Highlights"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"lua",
+				"Set Syntax: Lua"
+			],
+			[
+				"install pac",
+				"Package Control: Install Package"
+			],
+			[
+				"lint",
+				"Preferences: SublimeLinter Settings"
+			],
+			[
+				"syntax: lua",
+				"Set Syntax: Lua"
+			],
+			[
+				"install opa",
+				"Package Control: Install Package"
+			],
+			[
+				"file",
+				"File: New View into File"
+			],
+			[
+				"terminal",
+				"Preferences: Terminal Settings – User"
+			],
+			[
+				"key bindings",
+				"Preferences: Key Bindings"
+			],
+			[
+				"package ",
+				"Package Control: Remove Package"
+			],
+			[
+				"glue",
+				"Glue - Launch"
+			],
+			[
+				"install pack",
+				"Package Control: Install Package"
+			],
+			[
+				"eslint",
+				"ESLint"
+			],
+			[
+				"gitgutter",
+				"GitGutter: Disable for View"
+			],
+			[
+				"instal ",
+				"Package Control: Install Package"
+			],
+			[
+				"list ",
+				"Package Control: List Packages"
+			],
+			[
+				"key bin",
+				"Preferences: Key Bindings"
+			],
+			[
+				"ui them",
+				"UI: Select Theme"
+			],
+			[
+				"install poa",
+				"Package Control: Install Package"
+			],
+			[
+				"color ",
+				"UI: Select Color Scheme"
+			],
+			[
+				"syntax speci",
+				"Preferences: Settings – Syntax Specific"
+			],
+			[
+				"inte",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"jaca",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"pytho",
+				"Set Syntax: Python"
+			],
+			[
+				"babel",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"syntax spec",
+				"Preferences: Settings – Syntax Specific"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"scss",
+				"Set Syntax: SCSS"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"graphql",
+				"Set Syntax: GraphQL"
+			],
+			[
+				"grah",
+				"Set Syntax: GraphQL"
+			],
+			[
+				"syntax",
+				"Preferences: Settings – Syntax Specific"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"key ",
+				"Preferences: Key Bindings"
+			],
+			[
+				"package control",
+				"Package Control: List Packages"
+			],
+			[
+				"preferences",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"preferences package",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			],
+			[
+				"package settings",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"diff",
+				"Diff View: Show uncommitted changes"
+			],
+			[
+				"diffview",
+				"Diff View: Review last diff"
+			],
+			[
+				"packag",
+				"Package Control: Remove Package"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"babe",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"markdown",
+				"Set Syntax: Markdown"
+			],
+			[
+				"yaml",
+				"Set Syntax: YAML"
+			],
+			[
+				"babl",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"Babel",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"markdo",
+				"Set Syntax: Markdown"
+			],
+			[
+				"vue",
+				"Set Syntax: Vue Component"
+			],
+			[
+				"stylesheet",
+				"Snippet: StyleSheet.create()"
+			],
+			[
+				"react",
+				"Snippet: Create react-native Class"
+			],
+			[
+				"javascri",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"package control remove",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 412.0
+	},
+	"console":
+	{
+		"height": 308.0,
+		"history":
+		[
+			"exit",
+			"glue",
+			"glue path",
+			"exit()",
+			"git status",
+			"quit",
+			"exit",
+			"version",
+			"love .",
+			"love",
+			"dir",
+			"cd",
+			"ls",
+			"dir"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": false,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/CocosGames/Bguja/Classes/AppDelegate.cpp",
+		"/D/CocosGames/Bguja/Classes/HelloWorldScene.h",
+		"/D/CocosGames/Bguja/bguja.sublime-project",
+		"/D/CocosGames/Bguja/.sublime-project",
+		"/E/documents/PyProjects/30-Woffline/main.py",
+		"/E/Documents/PyProjects/30-Woffline/sites/lua/lua.html",
+		"/E/Documents/PyProjects/30-Woffline/sites/lua/press.html",
+		"/E/Documents/PyProjects/30-Woffline/sites/lua/home.html",
+		"/E/Documents/PyProjects/30-Woffline/sites/lua/docs/home/home.html",
+		"/E/Documents/PyProjects/30-Woffline/.gitignore",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/User/Python.sublime-settings",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Installed Packages/Theme - Cobalt2.sublime-package",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Installed Packages/Package Control.sublime-package",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/E/Documents/PyProjects/30-Woffline/temp.py",
+		"/E/Documents/PyProjects/30-Woffline/sites/Jekyll • Simple, blog-aware, static sites  Transform your plain text into static websites and blogs/Jekyll • Simple, blog-aware, static sites  Transform your plain text into static websites and blogs.html",
+		"/C/Users/Nika/Downloads/TIME LOG - Sheet1.csv",
+		"/C/Users/Nika/AppData/Roaming/fman/Plugins/User/Settings/Visited Paths (Windows).json",
+		"/C/Users/Nika/AppData/Roaming/fman/Plugins/User/Settings/Panes (Windows).json",
+		"/C/Users/Nika/AppData/Local/fman/Versions/1.1.0/Plugins/Core/Core Settings (Windows).json",
+		"/E/Documents/Xplore Documents/xplore-site/blog/gh-pages/index.html",
+		"/E/Documents/PyProjects/30-Woffline/test/test_url_util.py",
+		"/E/Documents/PyProjects/30-Woffline/url_util/url_util.py",
+		"/E/Documents/PyProjects/30-Woffline/sites/Xplore - Plan Hikes, Find Hikers/Xplore - Plan Hikes, Find Hikers.html",
+		"/E/Documents/PyProjects/30-Woffline/sites/Xplore - Plan Hikes, Find Hikers/res/_style.css",
+		"/C/Users/Nika/Downloads/site2.html",
+		"/C/Users/Nika/Downloads/site.html",
+		"/E/Documents/PyProjects/30-Woffline/util.py",
+		"/E/Documents/PyProjects/30-Woffline/README.md",
+		"/E/Documents/PyProjects/30-Woffline/sites/Xplore Blog/res/_cssfamily=Lato400,900.css",
+		"/E/Documents/PyProjects/30-Woffline/sites/Xplore Blog/res/_main.css",
+		"/D/hurl/conf.lua",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/D/hurl/joystick_controls.txt",
+		"/D/hurl/hurl.love",
+		"/D/hurl/obj/Controller.lua",
+		"/D/hurl/lib/json.lua",
+		"/D/hurl/lib/lume.lua",
+		"/D/ludum-dare-41/obj/Player.lua",
+		"/D/ludum-dare-41/sounds.lua",
+		"/D/ludum-dare-41/world.lua",
+		"/D/ludum-dare-41/main.lua",
+		"/D/ludum-dare-41/controls.lua",
+		"/D/ludum-dare-41/obj/Slash.lua",
+		"/D/ludum-dare-41/obj/Sword.lua",
+		"/D/ludum-dare-41/conf.lua",
+		"/D/ludum-dare-41/obj/Block.lua",
+		"/D/dahkar/main.lua",
+		"/D/dahkar/.luaglobalsrc",
+		"/C/Users/Nika/batch/.luacheckrc",
+		"/D/dahkar/.luacheckrc",
+		"/D/hammer-game/main.lua",
+		"/E/Documents/PyProjects/30-Woffline/sites/Xplore Blog/res/_material-icons.min.css",
+		"/E/Documents/PyProjects/30-Woffline/sites/Xplore Blog/res/_materialize.min.css",
+		"/E/Documents/PyProjects/30-Woffline/sites/original.html",
+		"/E/Documents/PyProjects/30-Woffline/sites/Xplore Blog/Xplore Blog.html",
+		"/E/Documents/PyProjects/30-Woffline/sites/Xplore Blog/res/_cssfamily=Lato400,900.a",
+		"/D/not-adjaruli/components/Popdown.css",
+		"/D/not-adjaruli/components/CaptureButton.js",
+		"/D/not-adjaruli/README.md",
+		"/D/not-adjaruli/.babelrc",
+		"/D/not-adjaruli/.gitignore",
+		"/D/madjaruli/imports/ui/CaptureButton.js",
+		"/D/madjaruli/.meteor/local/build/programs/web.browser/app/app.js",
+		"/D/madjaruli/client/main.js",
+		"/D/madjaruli/client/client.js",
+		"/D/madjaruli/imports/ui/._CaptureButton.js",
+		"/D/madjaruli/client/main.html",
+		"/D/madjaruli/client/main.css",
+		"/D/madjaruli/client/._main.html",
+		"/D/madjaruli/client/._main.js",
+		"/D/madjaruli/client/._main.css",
+		"/D/not-adjaruli/www/css/default.css",
+		"/D/not-adjaruli/www/css/index.css",
+		"/D/myapp/www/js/index.js",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/User/Terminal.sublime-settings",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
+		"/D/slami/.gitignore",
+		"/D/slami/server.js",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/User/.gitignore",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/User/update",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/User/README.md",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/Terminal/Default (Windows).sublime-keymap",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/Terminal/Default (OSX).sublime-keymap",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/.gitignore",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/User/sublime-settings/Preferences.sublime-settings",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/User/sublime-settings/Python.sublime-settings",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/User/sublime-settings/JavaScript.sublime-settings",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/User/JavaScript.sublime-settings",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/User/sublime-settings/JavaScript (Babel).sublime-settings",
+		"/C/Users/Nika/AppData/Roaming/Sublime Text 3/Packages/User/JavaScript (Babel).sublime-settings",
+		"/D/myApp/CONTRIBUTING.md",
+		"/D/myApp/config.xml",
+		"/D/meteor-test/client/main.js",
+		"/D/meteor-test/client/main.css",
+		"/D/meteor-test/server/main.js",
+		"/D/myApp/plugins/fetch.json",
+		"/D/myApp/plugins/android.json",
+		"/D/slami/client/src/components/EditorCard/EditorCard.js",
+		"/D/slami/client/src/components/EditorCard/index.js",
+		"/D/not-adjaruli/config.xml",
+		"/D/myApp/platforms/browser/www/js/index.js",
+		"/D/myApp/platforms/browser/www/index.html",
+		"/D/myApp/www/js/index.js",
+		"/D/slami/client/public/index.html",
+		"/D/slami/client/src/index.js",
+		"/D/slami/client/build/index.html",
+		"/D/bt-test/server.js",
+		"/D/bt-test/public/index.html",
+		"/D/bt-test/.gitignore",
+		"/D/scrapi/server.js",
+		"/D/bt-test/index.html",
+		"/D/phaser-test/index.html",
+		"/E/Documents/PyProjects/30-Woffline/test/test_util.py",
+		"/E/Documents/PyProjects/30-Woffline/down.html",
+		"/E/Documents/PyProjects/30-Woffline/original.html",
+		"/C/Users/Nika/Desktop/t/main.py",
+		"/E/Documents/PyProjects/30-Woffline/url_util.py",
+		"/E/Documents/PyProjects/30-Woffline/url_util/__init__.py",
+		"/C/Users/Nika/Desktop/t/test_main.py",
+		"/E/documents/PyProjects/30-Woffline/config.py",
+		"/E/Documents/PyProjects/30-Woffline/res/_jquery.min.js",
+		"/E/documents/PyProjects/30-Woffline/README.md",
+		"/D/slami/README.md",
+		"/D/slami/client/src/config.js",
+		"/E/Documents/PyProjects/30-Woffline/config.py"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 110.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"rect",
+			"__HELLOWORLD_SCENE_H__"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 42.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.SublimeLinter":
+	{
+		"height": 156.0
+	},
+	"output.exec":
+	{
+		"height": 72.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 288.0
+	},
+	"pinned_build_system": "",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"appdele",
+				"Classes\\AppDelegate.h"
+			],
+			[
+				"util",
+				"util.py"
+			],
+			[
+				"u",
+				"url_util\\url_util.py"
+			],
+			[
+				"url",
+				"url_util\\url_util.py"
+			],
+			[
+				"temp2",
+				"temp2.py"
+			],
+			[
+				"temp",
+				"temp.py"
+			],
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"test_ur",
+				"test\\test_url_util.py"
+			],
+			[
+				"readme",
+				"README.md"
+			],
+			[
+				"confi",
+				"config.py"
+			],
+			[
+				"config",
+				"config.py"
+			],
+			[
+				"test",
+				"test\\test_url_util.py"
+			],
+			[
+				"conf",
+				"config.py"
+			],
+			[
+				"player",
+				"obj\\Player.lua"
+			],
+			[
+				"control",
+				"obj\\Controller.lua"
+			],
+			[
+				"lue",
+				"lib\\lume.lua"
+			],
+			[
+				"play",
+				"obj\\Player.lua"
+			],
+			[
+				"neon",
+				"obj\\Neon.lua"
+			],
+			[
+				"css",
+				"sites\\Xplore Blog\\res\\_cssfamily=Lato400,900.css"
+			],
+			[
+				"_material",
+				"sites\\Xplore Blog\\res\\_material-icons.min.css"
+			],
+			[
+				"Xop",
+				"sites\\Xplore Blog\\Xplore Blog.html"
+			],
+			[
+				"origin",
+				"sites\\original.html"
+			],
+			[
+				"captu",
+				"components\\CaptureButton.js"
+			],
+			[
+				"App",
+				"App.js"
+			],
+			[
+				"",
+				"App.js"
+			],
+			[
+				"capturebu",
+				"components\\CaptureButton.js"
+			],
+			[
+				"capture",
+				"components\\CaptureButton.js"
+			],
+			[
+				"contro",
+				"controls.lua"
+			],
+			[
+				"main",
+				"main.lua"
+			],
+			[
+				"enemyb",
+				"obj\\EnemyB.lua"
+			],
+			[
+				"ene",
+				"obj\\Enemy.lua"
+			],
+			[
+				"cont",
+				"D:\\ludum-dare-41\\controls.lua"
+			],
+			[
+				"enem",
+				"obj\\EnemyB.lua"
+			],
+			[
+				"enemy",
+				"obj\\Enemy.lua"
+			],
+			[
+				"swo",
+				"obj\\Sword.lua"
+			],
+			[
+				"enemyu",
+				"obj\\Enemy.lua"
+			],
+			[
+				"worl",
+				"world.lua"
+			],
+			[
+				"sounds",
+				"sounds.lua"
+			],
+			[
+				"wo",
+				"world.lua"
+			],
+			[
+				"slash",
+				"obj\\Slash.lua"
+			],
+			[
+				"pla",
+				"obj\\Player.lua"
+			],
+			[
+				"world",
+				"world.lua"
+			],
+			[
+				"nemyb",
+				"obj\\EnemyB.lua"
+			],
+			[
+				"bloc",
+				"obj\\Block.lua"
+			],
+			[
+				"con",
+				"controls.lua"
+			],
+			[
+				"blo",
+				"obj\\Block.lua"
+			],
+			[
+				"wor",
+				"world.lua"
+			],
+			[
+				"swor",
+				"obj\\Sword.lua"
+			],
+			[
+				"sword",
+				"obj\\Sword.lua"
+			],
+			[
+				"sound",
+				"sounds.lua"
+			],
+			[
+				"hamm",
+				"obj\\Hammer.lua"
+			],
+			[
+				"slideed",
+				"src\\components\\SlideEditor\\SlideEditor.js"
+			],
+			[
+				"firstpage",
+				"src\\components\\FirstPage\\FirstPage.js"
+			],
+			[
+				"mediaitem",
+				"src\\components\\MediaItem\\MediaItem.js"
+			],
+			[
+				"slide",
+				"src\\components\\Slide\\Slide.js"
+			],
+			[
+				"first",
+				"src\\components\\FirstPage\\FirstPage.js"
+			],
+			[
+				"app",
+				"src\\components\\App\\App.js"
+			],
+			[
+				"secondpage",
+				"src\\components\\SecondPage\\SecondPage.js"
+			],
+			[
+				"slidee",
+				"src\\components\\SlideEditor\\SlideEditor.js"
+			],
+			[
+				"firt",
+				"src\\components\\FirstPage\\FirstPage.js"
+			],
+			[
+				"wha",
+				"src\\whammy.js"
+			],
+			[
+				"secondpa",
+				"src\\components\\SecondPage\\SecondPage.js"
+			],
+			[
+				"fiers",
+				"src\\components\\FirstPage\\FirstPage.js"
+			],
+			[
+				"tempda",
+				"src\\components\\App\\temp-data.js"
+			],
+			[
+				"mediai",
+				"src\\components\\MediaItem\\MediaItem.js"
+			],
+			[
+				"firstpa",
+				"src\\components\\FirstPage\\FirstPage.js"
+			],
+			[
+				"bonfire",
+				"src\\components\\Bonfire\\Bonfire.js"
+			],
+			[
+				"language",
+				"src\\components\\LanguageSelect\\LanguageSelect.js"
+			],
+			[
+				"strings",
+				"src\\values\\strings.js"
+			],
+			[
+				"foot",
+				"src\\components\\LandingFooter\\LandingFooter.css"
+			],
+			[
+				"footer",
+				"src\\components\\LandingFooter\\LandingFooter.js"
+			],
+			[
+				"landingb",
+				"src\\components\\LandingBody\\LandingBody.js"
+			],
+			[
+				"landing",
+				"src\\components\\LandingHeader\\LandingHeader.css"
+			],
+			[
+				"landingheader",
+				"src\\components\\LandingHeader\\LandingHeader.css"
+			],
+			[
+				"landingfooter",
+				"src\\components\\LandingFooter\\LandingFooter.css"
+			],
+			[
+				"header",
+				"src\\components\\LandingHeader\\LandingHeader.js"
+			],
+			[
+				"body",
+				"src\\components\\LandingBody\\LandingBody.js"
+			],
+			[
+				"smoke",
+				"src\\components\\Bonfire\\Smoke.css"
+			],
+			[
+				"appstoreb",
+				"src\\components\\AppStoreButton\\AppStoreButton.css"
+			],
+			[
+				"flame",
+				"src\\components\\Bonfire\\Flame.css"
+			],
+			[
+				"appsto",
+				"src\\components\\AppStoreButton\\AppStoreButton.js"
+			],
+			[
+				"land",
+				"src\\components\\LandingBody\\LandingBody.css"
+			],
+			[
+				"appstore",
+				"src\\components\\AppStoreButton\\AppStoreButton.css"
+			],
+			[
+				"styles.",
+				"src\\components\\LandingBody\\styles.js"
+			],
+			[
+				"appstorebutton",
+				"src\\components\\AppStoreButton\\AppStoreButton.js"
+			],
+			[
+				"langu",
+				"src\\components\\LanguageSelect\\LanguageSelect.js"
+			],
+			[
+				"playstore",
+				"src\\components\\PlayStoreButton\\PlayStoreButton.css"
+			],
+			[
+				"styles",
+				"src\\components\\LandingBody\\styles.js"
+			],
+			[
+				"landingbody",
+				"src\\components\\LandingBody\\LandingBody.css"
+			],
+			[
+				"index.css",
+				"src\\index.css"
+			],
+			[
+				"app.css",
+				"src\\App.css"
+			],
+			[
+				"prod",
+				"config\\production.json"
+			],
+			[
+				"languageselect",
+				"src\\components\\LanguageSelect\\LanguageSelect.js"
+			],
+			[
+				"values",
+				"src\\values\\config.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 38.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 235.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

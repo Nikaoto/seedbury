@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"folder_exclude_patterns":
+			[
+				"proj.android",
+				"proj.ios_mac",
+				"proj.win32",
+				"proj.linux",
+				"cocos2d",
+				"bin",
+				".git",
+				".idea"
+			]
+		}
+	],
+	"settings": {
+		"tab_size": 4
+	}
+}
