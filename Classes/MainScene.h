@@ -1,5 +1,6 @@
 #pragma once
 #include "cocos2d.h"
+#include "Land.h"
 
 class MainScene : public cocos2d::Scene {
 public:
@@ -7,6 +8,7 @@ public:
     CREATE_FUNC(MainScene);
     bool init() override;
 
-    void testHttpRequest();
-    void testHttpImageRequest(cocos2d::Vec2 position);
+protected:
+    cocos2d::Vector<Land*> landVector;
+    //cocos2d::EventListenerTouchOneByOne listener;
 };
