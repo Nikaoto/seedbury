@@ -4,36 +4,20 @@
 using namespace cocos2d;
 
 bool Land::init() {
-    if (!Node::init()) {
+    if (!Sprite::init()) {
         return false;
     }
     
-    this->setContentSize(LAND_SIZE);
-
-    // Draw land
-    Vec2 rect[4] = {
-        Vec2(0, 0),
-        Vec2(LAND_SIZE.width, 0),
-        Vec2(LAND_SIZE.width, LAND_SIZE.height),
-        Vec2(0, LAND_SIZE.height)
-    };
-    this->drawNode = DrawNode::create();
-    Color4F color;
-    if (this->isFertile()) {
-        color = Color4F(0.65f, 0.16f, 0.16f, 1);
-    } else {
-        color = Color4F(0.40f, 0.31f, 0.31f, 1);
-    }
-    
-    this->drawNode->drawPolygon(rect, 4, color, 1.5f, Color4F::BLACK);
-    this->addChild(this->drawNode);
-    //
+    setTexture(INFERTILE_SPRITE);
+    setAnchorPoint(Vec2(0, 1));
+    setScale(LAND_SIZE.width / getContentSize().width, LAND_SIZE.height / getContentSize().height);
     
     // Set up listener
     auto listener = EventListenerTouchOneByOne::create();
     listener->onTouchBegan = [&](Touch* touch, Event* event) {
-        if (this->getBoundingBox().containsPoint(touch->getLocation())) {
+        if (getBoundingBox().containsPoint(touch->getLocation())) {
             log("%s", "TOUCH");
+            setFertile(!isFertile());
         }
         return true;
     };
@@ -45,10 +29,11 @@ bool Land::init() {
 
 void Land::setFertile(bool fertile){
     this->fertile = fertile;
+    // Update sprite
     if (fertile) {
-        this->drawNode->setColor(Color3B::WHITE);
+        setTexture(FERTILE_SPRITE);
     } else {
-        this->drawNode->setColor(Color3B::BLACK);
+        setTexture(INFERTILE_SPRITE);
     }
 }
 

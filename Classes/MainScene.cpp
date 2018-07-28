@@ -35,9 +35,34 @@ bool MainScene::init() {
     director->setClearColor(Color4F::WHITE);
 
 #pragma region GRID_SETUP
-    auto land = Land::create();
-    land->setPosition(origin.x + size.width/2 , origin.y + size.height/2);
-    this->addChild(land);
+    const auto grid_margin = 10;
+    const auto margin_vertical = 100;
+    const auto margin_horizontal = 200;
+    const auto horizontal_land_count = 6;
+    const auto vertical_land_count = 3;
+    const auto land_count = horizontal_land_count * vertical_land_count;
+    
+    auto landVector = cocos2d::Vector<Land*>(land_count);
+    
+    auto p = Vec2(origin.x + margin_horizontal, origin.y + size.height - margin_vertical);
+    
+    // Draw both 3x3 grids
+    for (int x = 0; x < horizontal_land_count; x++) {
+        for (int y = 0; y < vertical_land_count; y++) {
+            auto land = Land::create();
+            auto s = land->getBoundingBox().size;
+            auto pos = Vec2(p.x + s.width * x + grid_margin * x, p.y - s.height * y - grid_margin * y);
+            
+            // Add distance between the two grids
+            if (x > 2) {
+                pos.set(pos.x + grid_margin * 6, pos.y);
+            }
+            
+            land->setPosition(pos);
+            landVector.pushBack(land);
+            this->addChild(land);
+        }
+    }
 #pragma endregion
 
 
