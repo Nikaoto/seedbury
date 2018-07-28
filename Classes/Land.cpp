@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Land.h"
+#include "Plant.h"
 
 using namespace cocos2d;
 
@@ -16,8 +17,17 @@ bool Land::init() {
     auto listener = EventListenerTouchOneByOne::create();
     listener->onTouchBegan = [&](Touch* touch, Event* event) {
         if (getBoundingBox().containsPoint(touch->getLocation())) {
-            
-            setFertile(!isFertile());
+            if (isFertile()) {
+                if (plant == nullptr) {
+                    plant = Plant::create();
+                    plant->setPosition(0, 55); // TODO carry this out as plant margin
+                    this->addChild(plant, 1);
+                } else {
+                    plant->setGrowthStage(plant->getGrowthStage() + 1);
+                }
+            } else {
+                setFertile(true);
+            }
         }
         return true;
     };

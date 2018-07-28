@@ -29,7 +29,6 @@ bool MainScene::init() {
     const auto size = director->getVisibleSize();
     const auto origin = director->getVisibleOrigin();
     
-    
     // Background
     director->setClearColor(Color4F::WHITE);
     const auto grass_tile_size = Size(200, 200);
@@ -43,7 +42,7 @@ bool MainScene::init() {
             tempGrass->setScale(grass->getScaleX(), grass->getScaleY());
             tempGrass->setAnchorPoint(Vec2(0, 1));
             tempGrass->setPosition(x, y);
-            this->addChild(tempGrass);
+            this->addChild(tempGrass, -3);
         }
     }
 
