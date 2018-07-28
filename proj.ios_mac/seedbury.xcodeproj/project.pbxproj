@@ -17,6 +17,8 @@
 		1AF87B8B1F6F782A007BE51C /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1AF87B5E1F6F77D6007BE51C /* RootViewController.mm */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		24086333210C6C86008D9435 /* land_fertile.png in Resources */ = {isa = PBXBuildFile; fileRef = 24086330210C6C85008D9435 /* land_fertile.png */; };
+		24086334210C6C86008D9435 /* land_infertile.png in Resources */ = {isa = PBXBuildFile; fileRef = 24086332210C6C85008D9435 /* land_infertile.png */; };
 		2422432B210B251B00A09A30 /* Land.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2422432A210B251A00A09A30 /* Land.cpp */; };
 		24EA4CDE2108B6E40080AB0F /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24EA4CDA2108B6E40080AB0F /* MainScene.cpp */; };
 		24EA4CE82108BC4B0080AB0F /* ui in Resources */ = {isa = PBXBuildFile; fileRef = 24EA4CE72108BC4B0080AB0F /* ui */; };
@@ -112,6 +114,8 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* seedbury-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "seedbury-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		24086330210C6C85008D9435 /* land_fertile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = land_fertile.png; sourceTree = "<group>"; };
+		24086332210C6C85008D9435 /* land_infertile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = land_infertile.png; sourceTree = "<group>"; };
 		24224329210B251A00A09A30 /* Land.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Land.h; sourceTree = "<group>"; };
 		2422432A210B251A00A09A30 /* Land.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Land.cpp; sourceTree = "<group>"; };
 		24EA4CDA2108B6E40080AB0F /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
@@ -274,6 +278,8 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				24086330210C6C85008D9435 /* land_fertile.png */,
+				24086332210C6C85008D9435 /* land_infertile.png */,
 				24EA4CE72108BC4B0080AB0F /* ui */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 				3EACC98E19EE6D4300EB3C5E /* res */,
@@ -424,11 +430,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				24EA4CE82108BC4B0080AB0F /* ui in Resources */,
+				24086333210C6C86008D9435 /* land_fertile.png in Resources */,
 				1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				1AF87B891F6F781D007BE51C /* LaunchScreenBackground.png in Resources */,
+				24086334210C6C86008D9435 /* land_infertile.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				1AF87B881F6F781D007BE51C /* LaunchScreen.storyboard in Resources */,
 			);
