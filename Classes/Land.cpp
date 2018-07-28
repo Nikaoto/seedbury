@@ -16,7 +16,7 @@ bool Land::init() {
     auto listener = EventListenerTouchOneByOne::create();
     listener->onTouchBegan = [&](Touch* touch, Event* event) {
         if (getBoundingBox().containsPoint(touch->getLocation())) {
-            log("%s", "TOUCH");
+            
             setFertile(!isFertile());
         }
         return true;
