@@ -20,6 +20,11 @@
 		24086333210C6C86008D9435 /* land_fertile.png in Resources */ = {isa = PBXBuildFile; fileRef = 24086330210C6C85008D9435 /* land_fertile.png */; };
 		24086334210C6C86008D9435 /* land_infertile.png in Resources */ = {isa = PBXBuildFile; fileRef = 24086332210C6C85008D9435 /* land_infertile.png */; };
 		2422432B210B251B00A09A30 /* Land.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2422432A210B251A00A09A30 /* Land.cpp */; };
+		2428B24A210CA1A000EB00DA /* grass.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2428B248210CA19F00EB00DA /* grass.jpg */; };
+		2428B24F210CC80B00EB00DA /* plant_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2428B24B210CC80B00EB00DA /* plant_2.png */; };
+		2428B250210CC80B00EB00DA /* plant_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2428B24C210CC80B00EB00DA /* plant_1.png */; };
+		2428B251210CC80B00EB00DA /* plant_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 2428B24D210CC80B00EB00DA /* plant_0.png */; };
+		2428B252210CC80B00EB00DA /* plant_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2428B24E210CC80B00EB00DA /* plant_3.png */; };
 		24EA4CDE2108B6E40080AB0F /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24EA4CDA2108B6E40080AB0F /* MainScene.cpp */; };
 		24EA4CE82108BC4B0080AB0F /* ui in Resources */ = {isa = PBXBuildFile; fileRef = 24EA4CE72108BC4B0080AB0F /* ui */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
@@ -118,6 +123,11 @@
 		24086332210C6C85008D9435 /* land_infertile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = land_infertile.png; sourceTree = "<group>"; };
 		24224329210B251A00A09A30 /* Land.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Land.h; sourceTree = "<group>"; };
 		2422432A210B251A00A09A30 /* Land.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Land.cpp; sourceTree = "<group>"; };
+		2428B248210CA19F00EB00DA /* grass.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grass.jpg; sourceTree = "<group>"; };
+		2428B24B210CC80B00EB00DA /* plant_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plant_2.png; sourceTree = "<group>"; };
+		2428B24C210CC80B00EB00DA /* plant_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plant_1.png; sourceTree = "<group>"; };
+		2428B24D210CC80B00EB00DA /* plant_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plant_0.png; sourceTree = "<group>"; };
+		2428B24E210CC80B00EB00DA /* plant_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plant_3.png; sourceTree = "<group>"; };
 		24EA4CDA2108B6E40080AB0F /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
 		24EA4CDC2108B6E40080AB0F /* InternetStatus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = InternetStatus.hpp; sourceTree = "<group>"; };
 		24EA4CDD2108B6E40080AB0F /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
@@ -278,6 +288,11 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2428B24D210CC80B00EB00DA /* plant_0.png */,
+				2428B24C210CC80B00EB00DA /* plant_1.png */,
+				2428B24B210CC80B00EB00DA /* plant_2.png */,
+				2428B24E210CC80B00EB00DA /* plant_3.png */,
+				2428B248210CA19F00EB00DA /* grass.jpg */,
 				24086330210C6C85008D9435 /* land_fertile.png */,
 				24086332210C6C85008D9435 /* land_infertile.png */,
 				24EA4CE72108BC4B0080AB0F /* ui */,
@@ -429,6 +444,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2428B250210CC80B00EB00DA /* plant_1.png in Resources */,
 				24EA4CE82108BC4B0080AB0F /* ui in Resources */,
 				24086333210C6C86008D9435 /* land_fertile.png in Resources */,
 				1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */,
@@ -437,7 +453,11 @@
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				1AF87B891F6F781D007BE51C /* LaunchScreenBackground.png in Resources */,
 				24086334210C6C86008D9435 /* land_infertile.png in Resources */,
+				2428B24A210CA1A000EB00DA /* grass.jpg in Resources */,
+				2428B252210CC80B00EB00DA /* plant_3.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
+				2428B24F210CC80B00EB00DA /* plant_2.png in Resources */,
+				2428B251210CC80B00EB00DA /* plant_0.png in Resources */,
 				1AF87B881F6F781D007BE51C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
