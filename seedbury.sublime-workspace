@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"get",
+				"getGrowthStage"
+			],
+			[
 				"goup",
 				"goup_count"
 			],
@@ -22,10 +26,6 @@
 			[
 				"fun",
 				"function\tfunction"
-			],
-			[
-				"get",
-				"get_origin_url"
 			],
 			[
 				"css",
@@ -625,6 +625,10 @@
 		"selected_items":
 		[
 			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
 				"reload",
 				"SublimeLinter: Reload SublimeLinter and its Plugins"
 			],
@@ -949,10 +953,6 @@
 				"Set Syntax: JavaScript"
 			],
 			[
-				"c++",
-				"Set Syntax: C++"
-			],
-			[
 				"package control remove",
 				"Package Control: Remove Package"
 			]
@@ -1122,7 +1122,7 @@
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -1136,6 +1136,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"SPRITE_PATHS",
 			"internet",
 			"internetstatus",
 			"rect",
