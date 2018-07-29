@@ -10,10 +10,14 @@ const static std::vector<std::string> TEXTURE_PATHS = {
     "plant_2.png",
     "plant_3.png"
 };
+const static int GROWTH_TIME = 5;
 
 class Plant : public cocos2d::Sprite {
 public:
     bool init() override;
+    void update(float dt) override;
+    
+    float time;
 
     const int getGrowthStage();
     void setGrowthStage(const int stage);

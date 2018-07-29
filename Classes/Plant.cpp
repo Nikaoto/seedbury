@@ -10,9 +10,21 @@ bool Plant::init() {
     
     setTexture(TEXTURE_PATHS[0]);
     setAnchorPoint(Vec2(0, 0));
-    //setScale(PLANT_SIZE.width / getContentSize().width, PLANT_SIZE.height / getContentSize().height);
-
+    time = GROWTH_TIME;
+    
+    scheduleUpdate();
+    
     return true;
+}
+
+void Plant::update(float dt) {
+    if (getGrowthStage() < MAX_GROWTH_STAGE) {
+        time -= dt;
+        if (time <= 0) {
+            setGrowthStage(getGrowthStage() + 1);
+            time = GROWTH_TIME;
+        }
+    }
 }
 
 void Plant::setGrowthStage(const int stage) {
