@@ -37,7 +37,7 @@ bool MainScene::init() {
     grass->setScale(grass_tile_size.width / grass->getContentSize().width, grass_tile_size.height / grass->getContentSize().width);
     /// Clone grass tiles
     for (int x = 0; x < size.width; x += grass_tile_size.width) {
-        for (int y = size.height; y > 0; y -= grass_tile_size.height) {
+        for (int y = size.height + 1; y > 0; y -= grass_tile_size.height) {
             auto tempGrass = Sprite::createWithTexture(grass->getTexture());
             tempGrass->setScale(grass->getScaleX(), grass->getScaleY());
             tempGrass->setAnchorPoint(Vec2(0, 1));
