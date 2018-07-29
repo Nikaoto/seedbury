@@ -3,6 +3,35 @@ Follow cli reference
 [here](http://www.cocos2d-x.org/docs/cocos2d-x/en/editors_and_tools/cocosCLTool.html) for building 
 and compilation instructions.
 
+## Time api
+`https://www.worldtimeserver.com/handlers/GetData.ashx?action=GCTData&_=1532888676507`
+returns:
+```
+{
+  LocIDDescription: "Georgia - ",
+  LocIDLocationID: "GE",
+  CountryCode: "GE",
+  CountryName: "Georgia",
+  State: "",
+  City: "Unknown",
+  TimeZone: "Asia/Tbilisi",
+  DstZoneName: "",
+  DstZoneAbbrev: "",
+  StdZoneName: "Georgia Standard Time",
+  StdZoneAbbrev: "GET",
+  IsInDST: false,
+  ThisTime: "2018-07-29T22:26:03.0614369Z",
+  DateTime_12HR: "10:26 PM",
+  DateTime_24HR: "22:26:03",
+  FormattedDate: "Sunday, July 29, 2018",
+  Lat: 42,
+  Lng: 43.5,
+  ErrorMsg: null,
+  serverTimeStamp: 1532903163061.4368,
+  dataFrom: "IP"
+}
+```
+
 ## Test internet connection
 ```
 void MainScene::testHttpRequest() {
