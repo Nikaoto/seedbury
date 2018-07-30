@@ -2,16 +2,14 @@
 #include "cocos2d.h"
 #include "Plant.h"
 
-const static cocos2d::Size LAND_SIZE = cocos2d::Size(128, 128);
-
-// Sprite paths
-const static std::string FERTILE_SPRITE = "land_fertile.png";
-const static std::string INFERTILE_SPRITE = "land_infertile.png";
-//
 class Plant;
 
 class Land : public cocos2d::Sprite {
 public:
+    static const cocos2d::Size SIZE;
+    static const std::string FERTILE_SPRITE;
+    static const std::string INFERTILE_SPRITE;
+
     bool init() override;
     
     Plant* plant;

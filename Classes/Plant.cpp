@@ -1,5 +1,14 @@
 #include <iostream>
 #include "Plant.h"
+#include "Land.h"
+
+const cocos2d::Size Plant::SIZE = cocos2d::Size(128, 128);
+const std::string Plant::TEXTURE_PATHS[4] = {
+    "plant_0.png",
+    "plant_1.png",
+    "plant_2.png",
+    "plant_3.png"
+};
 
 using namespace cocos2d;
 

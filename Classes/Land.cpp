@@ -2,6 +2,10 @@
 #include "Land.h"
 #include "Plant.h"
 
+const cocos2d::Size Land::SIZE = cocos2d::Size(128, 128);
+const std::string  Land::FERTILE_SPRITE = "land_fertile.png";
+const std::string Land::INFERTILE_SPRITE = "land_infertile.png";
+
 using namespace cocos2d;
 
 bool Land::init() {
@@ -11,7 +15,7 @@ bool Land::init() {
     
     setTexture(INFERTILE_SPRITE);
     setAnchorPoint(Vec2(0, 1));
-    setScale(LAND_SIZE.width / getContentSize().width, LAND_SIZE.height / getContentSize().height);
+    setScale(SIZE.width / getContentSize().width, SIZE.height / getContentSize().height);
     
     // Set up listener
     auto listener = EventListenerTouchOneByOne::create();
