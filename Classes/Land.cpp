@@ -20,8 +20,15 @@ bool Land::init() {
             if (isFertile()) {
                 if (plant == nullptr) {
                     plant = Plant::create();
-                    plant->setPosition(0, 55); // TODO carry this out as plant margin
+                    plant->setPosition(0, Plant::MARGIN_BOTTOM); // TODO carry this out as plant margin
                     this->addChild(plant, 1);
+                    
+                    // Milliseconds since epoch
+                    unsigned long now = std::chrono::duration_cast<std::chrono::milliseconds>
+                    (std::chrono::system_clock::now().time_since_epoch()).count();
+                    log("%li", now);
+                    
+                    //DBManager->getInstance()->newPlant(millis_since_epoch, this->landNumber)
                 } else {
                     plant->setGrowthStage(plant->getGrowthStage() + 1);
                 }
@@ -47,6 +54,14 @@ void Land::setFertile(bool fertile){
     }
 }
 
-bool Land::isFertile() {
+const bool Land::isFertile() {
     return this->fertile;
+}
+
+void Land::setLandNumber(int landNumber) {
+    this->landNumber = landNumber;
+}
+
+const int Land::getLandNumber() {
+    return this->landNumber;
 }

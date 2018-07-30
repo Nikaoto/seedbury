@@ -17,9 +17,13 @@ public:
     Plant* plant;
     
     void setFertile(bool fertile);
-    bool isFertile();
+    const bool isFertile();
+    
+    void setLandNumber(int landNumber);
+    const int getLandNumber();
     
     CREATE_FUNC(Land);
 protected:
     bool fertile;
+    int landNumber;
 };
