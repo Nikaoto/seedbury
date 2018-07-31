@@ -26,6 +26,8 @@
 		2428B251210CC80B00EB00DA /* plant_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 2428B24D210CC80B00EB00DA /* plant_0.png */; };
 		2428B252210CC80B00EB00DA /* plant_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2428B24E210CC80B00EB00DA /* plant_3.png */; };
 		2428B255210CCDA500EB00DA /* Plant.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2428B253210CCDA500EB00DA /* Plant.cpp */; };
+		24BACE882110566700EE012C /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 24BACE872110566700EE012C /* sqlite3.c */; };
+		24C818BD211078E500887AF3 /* DBManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24C818BA211078E500887AF3 /* DBManager.cpp */; };
 		24EA4CDE2108B6E40080AB0F /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24EA4CDA2108B6E40080AB0F /* MainScene.cpp */; };
 		24EA4CE82108BC4B0080AB0F /* ui in Resources */ = {isa = PBXBuildFile; fileRef = 24EA4CE72108BC4B0080AB0F /* ui */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
@@ -131,6 +133,10 @@
 		2428B24E210CC80B00EB00DA /* plant_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plant_3.png; sourceTree = "<group>"; };
 		2428B253210CCDA500EB00DA /* Plant.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Plant.cpp; sourceTree = "<group>"; };
 		2428B254210CCDA500EB00DA /* Plant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plant.h; sourceTree = "<group>"; };
+		24BACE862110566700EE012C /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
+		24BACE872110566700EE012C /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
+		24C818BA211078E500887AF3 /* DBManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DBManager.cpp; sourceTree = "<group>"; };
+		24C818BC211078E500887AF3 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		24EA4CDA2108B6E40080AB0F /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
 		24EA4CDC2108B6E40080AB0F /* InternetStatus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = InternetStatus.hpp; sourceTree = "<group>"; };
 		24EA4CDD2108B6E40080AB0F /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
@@ -311,6 +317,10 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				24C818BA211078E500887AF3 /* DBManager.cpp */,
+				24C818BC211078E500887AF3 /* DBManager.h */,
+				24BACE872110566700EE012C /* sqlite3.c */,
+				24BACE862110566700EE012C /* sqlite3.h */,
 				2428B253210CCDA500EB00DA /* Plant.cpp */,
 				2428B254210CCDA500EB00DA /* Plant.h */,
 				2422432A210B251A00A09A30 /* Land.cpp */,
@@ -487,6 +497,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AF87B781F6F77F7007BE51C /* AppController.mm in Sources */,
+				24C818BD211078E500887AF3 /* DBManager.cpp in Sources */,
+				24BACE882110566700EE012C /* sqlite3.c in Sources */,
 				2428B255210CCDA500EB00DA /* Plant.cpp in Sources */,
 				1AF87B8B1F6F782A007BE51C /* RootViewController.mm in Sources */,
 				2422432B210B251B00A09A30 /* Land.cpp in Sources */,
