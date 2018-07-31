@@ -58,10 +58,48 @@ DBManager* DBManager::getInstance() {
 void DBManager::savePlant(int landNumber, unsigned long plantTime, std::string plantType) {
     std::ostringstream query;
     query << "INSERT INTO " << TABLE_PLANTS << " VALUES (null, " << landNumber << ", " << plantTime << ", '" << plantType <<"');";
-    char* errmsg;
-    int result = sqlite3_exec(database, query.str().c_str(), NULL, NULL, &errmsg);
-    if (errmsg) {
-        CCLOG("Sqlite error %s", errmsg);
-    }
+    int result = sqlite3_exec(database, query.str().c_str(), NULL, NULL, NULL);
     CCASSERT(result == SQLITE_OK, std::string("Failed sql command: ").append(query.str()).c_str());
+}
+
+Plant* DBManager::getPlant(int landNumber) {
+    std::ostringstream query;
+    query << "SELECT * FROM " << TABLE_PLANTS << " WHERE " << COLUMN_LAND_NUMBER << "=" << landNumber;
+    sqlite3_stmt* stmt;
+    
+    int result = sqlite3_prepare_v2(database, query.str().c_str(), -1, &stmt, NULL);
+    CCASSERT(result == SQLITE_OK, std::string("Failed query: ").append(query.str()).c_str());
+    sqlite3_step(stmt);
+    unsigned long plantTime = sqlite3_column_int(stmt, 2);
+    std::string plantType(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3)));
+    sqlite3_finalize(stmt);
+    return new Plant(plantTime, plantType);
+}
+
+cocos2d::Map<int, Plant*> DBManager::getPlants() {
+    std::ostringstream query;
+    CCLOG("0");
+    query << "SELECT * FROM " << TABLE_PLANTS;
+    CCLOG("1");
+    sqlite3_stmt* stmt;
+    CCLOG("2");
+    int result = sqlite3_prepare_v2(database, query.str().c_str(), -1, &stmt, NULL);
+    CCASSERT(result == SQLITE_OK, std::string("Failed query: ").append(query.str()).c_str());
+    CCLOG("3 assert passed");
+    sqlite3_step(stmt);
+    cocos2d::Map<int, Plant*> plantMap = cocos2d::Map<int, Plant*>();
+    while (result != SQLITE_DONE) {
+        int landNumber = sqlite3_column_int(stmt, 1);
+        CCLOG("4 landnum");
+        unsigned long plantTime = sqlite3_column_int(stmt, 2);
+        CCLOG("5 planttime");
+        const char* plantType = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
+        CCLOG("6 planttype");
+        // Add new plant to vector
+        plantMap.insert(landNumber, new Plant(plantTime, "standard"));
+        CCLOG("7 insertion");
+        result = sqlite3_step(stmt);
+    }
+    sqlite3_finalize(stmt);
+    return plantMap;
 }

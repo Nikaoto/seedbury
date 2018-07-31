@@ -21,6 +21,8 @@ public:
     
     // Queries
     void savePlant(int landNumber, unsigned long plantTime, std::string plantType);
+    Plant* getPlant(int landNumber);
+    cocos2d::Map<int, Plant*> getPlants();
 protected:
     sqlite3* database;
 };
