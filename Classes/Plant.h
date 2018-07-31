@@ -24,7 +24,6 @@ public:
     // Getters and setters
     const int getGrowthStage();
     void setGrowthStage(const int stage);
-
 protected:
     int growthStage;
 };
