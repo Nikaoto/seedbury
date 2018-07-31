@@ -625,6 +625,14 @@
 		"selected_items":
 		[
 			[
+				"key ",
+				"Preferences: Key Bindings"
+			],
+			[
+				"key bind",
+				"Preferences: Terminal Key Bindings – User"
+			],
+			[
 				"c++",
 				"Set Syntax: C++"
 			],
@@ -671,10 +679,6 @@
 			[
 				"key bin",
 				"Preferences: Key Bindings"
-			],
-			[
-				"key bind",
-				"Preferences: Terminal Key Bindings – User"
 			],
 			[
 				"project",
@@ -873,10 +877,6 @@
 				"Package Control: Remove Package"
 			],
 			[
-				"key ",
-				"Preferences: Key Bindings"
-			],
-			[
 				"package control",
 				"Package Control: List Packages"
 			],
@@ -991,9 +991,13 @@
 	},
 	"file_history":
 	[
+		"/Users/nika/Desktop/seedbury/Classes/DBManager.cpp",
+		"/Users/nika/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/nika/Desktop/seedbury/Classes/Plant.cpp",
+		"/Users/nika/Desktop/seedbury/Classes/Plant.h",
+		"/Users/nika/Desktop/seedbury/Classes/MainScene.h",
 		"/Users/nika/Desktop/seedbury/README.md",
 		"/Users/nika/Desktop/seedbury/Classes/MainScene.cpp",
-		"/Users/nika/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
 		"/D/CocosGames/Bguja/Classes/AppDelegate.cpp",
 		"/D/CocosGames/Bguja/Classes/HelloWorldScene.h",
 		"/D/CocosGames/Bguja/bguja.sublime-project",
@@ -1114,15 +1118,11 @@
 		"/E/Documents/PyProjects/30-Woffline/original.html",
 		"/C/Users/Nika/Desktop/t/main.py",
 		"/E/Documents/PyProjects/30-Woffline/url_util.py",
-		"/E/Documents/PyProjects/30-Woffline/url_util/__init__.py",
-		"/C/Users/Nika/Desktop/t/test_main.py",
-		"/E/documents/PyProjects/30-Woffline/config.py",
-		"/E/Documents/PyProjects/30-Woffline/res/_jquery.min.js",
-		"/E/documents/PyProjects/30-Woffline/README.md"
+		"/E/Documents/PyProjects/30-Woffline/url_util/__init__.py"
 	],
 	"find":
 	{
-		"height": 37.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -1136,6 +1136,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"PlantTime",
+			"plantTime",
+			"PlantTime",
+			"Tyep",
+			"GrowthStage",
+			"__TYPE__",
 			"SPRITE_PATHS",
 			"internet",
 			"internetstatus",
@@ -1219,16 +1225,36 @@
 		"selected_items":
 		[
 			[
+				"plantc",
+				"Classes/Plant.cpp"
+			],
+			[
+				"plna",
+				"Classes/Plant.h"
+			],
+			[
+				"dbmanc",
+				"Classes/DBManager.cpp"
+			],
+			[
+				"planth",
+				"Classes/Plant.h"
+			],
+			[
+				"mainsce",
+				"Classes/MainScene.cpp"
+			],
+			[
+				"mainscene",
+				"Classes/MainScene.h"
+			],
+			[
 				"Land",
 				"Classes/Land.cpp"
 			],
 			[
 				"main",
 				"Classes/MainScene.cpp"
-			],
-			[
-				"mainscene",
-				"Classes/MainScene.h"
 			],
 			[
 				"",
