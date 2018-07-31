@@ -2,6 +2,7 @@
 #include "Plant.h"
 #include "Land.h"
 
+// Constants
 const cocos2d::Size Plant::SIZE = cocos2d::Size(128, 128);
 const std::string Plant::TEXTURE_PATHS[4] = {
     "plant_0.png",
@@ -9,6 +10,10 @@ const std::string Plant::TEXTURE_PATHS[4] = {
     "plant_2.png",
     "plant_3.png"
 };
+const int Plant::GROWTH_TIME = 5;
+const int Plant::MIN_GROWTH_STAGE = 0;
+const int Plant::MAX_GROWTH_STAGE = 3;
+const int Plant::MARGIN_BOTTOM = 55;
 
 using namespace cocos2d;
 
