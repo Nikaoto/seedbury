@@ -23,15 +23,15 @@ bool Land::init() {
         if (getBoundingBox().containsPoint(touch->getLocation())) {
             if (isFertile()) {
                 if (plant == nullptr) {
-                    plant = Plant::create();
-                    plant->setPosition(0, Plant::MARGIN_BOTTOM); // TODO carry this out as plant margin
-                    this->addChild(plant, 1);
                     // Milliseconds since epoch
                     unsigned long now = std::chrono::duration_cast<std::chrono::milliseconds>
                     (std::chrono::system_clock::now().time_since_epoch()).count();
-                    log("%li", now);
-                    
-                    DBManager::getInstance()->savePlant(this->landNumber, now, "standard");
+                    // Create new plant object
+                    plant = Plant::create(now, "standard");
+                    plant->setPosition(0, Plant::MARGIN_BOTTOM);
+                    this->addChild(plant, 1);
+                    // Save to db
+                    DBManager::getInstance()->savePlant(this->landNumber, plant->getPlantTime(), plant->getPlantType());
                 } else {
                     plant->setGrowthStage(plant->getGrowthStage() + 1);
                 }

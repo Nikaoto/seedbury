@@ -11,9 +11,10 @@ public:
     static const int MAX_GROWTH_STAGE;
     static const int MARGIN_BOTTOM;
     
-    // Cocos2d rituals
+    // Init
+    static Plant* create(unsigned long plantTime, std::string plantType);
+    Plant(unsigned long plantTime = 0, std::string plantType = "standard");
     bool init() override;
-    CREATE_FUNC(Plant);
 
     // Functions
     void update(float dt) override;
@@ -24,6 +25,14 @@ public:
     // Getters and setters
     const int getGrowthStage();
     void setGrowthStage(const int stage);
+
+    const unsigned long getPlantTime();
+    void setPlantTime(const unsigned long plantTime);
+
+    const std::string getPlantType();
+    void setPlantType(const std::string plantType);
 protected:
+    unsigned long plantTime;
+    std::string plantType;
     int growthStage;
 };

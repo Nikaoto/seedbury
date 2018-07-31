@@ -24,7 +24,7 @@ bool MainScene::init() {
         return false;
     }
     
-    DBManager::getInstance();
+    auto dbManager = DBManager::getInstance();
     
     log("scene created");
 
@@ -61,7 +61,11 @@ bool MainScene::init() {
     // Starting position
     auto p = Vec2(origin.x + margin_horizontal, origin.y + size.height - margin_vertical);
     int landCounter = 0;
+    // Get all plants from db
+    log("Get all plants from db");
+    auto plantMap = dbManager->getPlants();
     // Draw both 3x3 grids
+    log("Draw both 3x3 grids");
     for (int x = 0; x < horizontal_land_count; x++) {
         for (int y = 0; y < vertical_land_count; y++) {
             auto land = Land::create();
@@ -75,6 +79,11 @@ bool MainScene::init() {
             
             land->setPosition(pos);
             land->setLandNumber(landCounter);
+            if (plantMap.find(landCounter) != plantMap.end()) {
+                log("plant exists at %i", landCounter);
+                land->setFertile(true);
+                // TODO maybe implement plant adding from each land obj
+            }
             landVector.pushBack(land);
             this->addChild(land);
             landCounter += 1;

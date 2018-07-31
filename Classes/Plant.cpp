@@ -17,6 +17,31 @@ const int Plant::MARGIN_BOTTOM = 55;
 
 using namespace cocos2d;
 
+Plant* Plant::create(unsigned long plantTime, std::string plantType) {
+    Plant *pRet = new(std::nothrow) Plant(plantTime, plantType);
+    if (pRet && pRet->init()) {
+        pRet->autorelease();
+        return pRet;
+    } else {
+        delete pRet;
+        pRet = nullptr;
+        return nullptr;
+    }
+}
+
+Plant::Plant(unsigned long plantTime, std::string plantType) {
+    this->plantTime = plantTime;
+    this->plantType = plantType;
+    
+    if (plantTime != 0) {
+        // Calculate growthStage
+        unsigned long now = std::chrono::duration_cast<std::chrono::milliseconds>
+        (std::chrono::system_clock::now().time_since_epoch()).count();
+        auto elapsedSeconds = (now - plantTime) / 1000;
+        setGrowthStage((int)std::floor(elapsedSeconds / GROWTH_TIME));
+    }
+}
+
 bool Plant::init() {
     if (!Sprite::init()) {
         return false;
@@ -57,4 +82,20 @@ void Plant::setGrowthStage(const int stage) {
 
 const int Plant::getGrowthStage() {
     return this->growthStage;
+}
+
+void Plant::setPlantTime(const unsigned long plantTime){
+    this->plantTime = plantTime;
+}
+
+const unsigned long Plant::getPlantTime() {
+    return this->plantTime;
+}
+
+void Plant::setPlantType(const std::string plantType){
+    this->plantType = plantType;
+}
+
+const std::string Plant::getPlantType() {
+    return this->plantType;
 }
