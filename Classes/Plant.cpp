@@ -61,7 +61,6 @@ void Plant::update(float dt) {
         (std::chrono::system_clock::now().time_since_epoch()).count();
         int elapsedSeconds = (int) (now - plantTime);
         if (elapsedSeconds > 0) {
-            CCLOG("seconds elapsed: %i", elapsedSeconds);
             int stagesPassed = std::floor(elapsedSeconds / GROWTH_TIME);
             setGrowthStage(stagesPassed);
         }
