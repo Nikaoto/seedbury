@@ -51,8 +51,8 @@ bool Land::init() {
             if (isFertile()) {
                 CCLOG("land %i fertile", this->landNumber);
                 if (plant == nullptr) {
-                    // Milliseconds since epoch
-                    unsigned long now = std::chrono::duration_cast<std::chrono::milliseconds>
+                    // Seconds since epoch
+                    unsigned long now = std::chrono::duration_cast<std::chrono::seconds>
                     (std::chrono::system_clock::now().time_since_epoch()).count();
                     // Create new plant object
                     setPlant(Plant::create(now));
