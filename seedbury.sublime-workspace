@@ -1136,6 +1136,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Plant",
 			"PlantTime",
 			"plantTime",
 			"PlantTime",
@@ -1225,6 +1226,18 @@
 		"selected_items":
 		[
 			[
+				"landh",
+				"Classes/Land.h"
+			],
+			[
+				"landc",
+				"Classes/Land.cpp"
+			],
+			[
+				"planth",
+				"Classes/Plant.h"
+			],
+			[
 				"plantc",
 				"Classes/Plant.cpp"
 			],
@@ -1235,10 +1248,6 @@
 			[
 				"dbmanc",
 				"Classes/DBManager.cpp"
-			],
-			[
-				"planth",
-				"Classes/Plant.h"
 			],
 			[
 				"mainsce",
