@@ -12,18 +12,14 @@ const std::string DBManager::COLUMN_PLANT_TIME = "PlantTime";
 const std::string DBManager::COLUMN_PLANT_TYPE = "PlantType";
 
 // Point instance to null
-DBManager* DBManager::dbManager = 0;
+DBManager* DBManager::dbManager = nullptr;
 
 // Private constructor, called only once upon initialization
 DBManager::DBManager() {
     // Init database and path
     database = nullptr;
-    std::string dbPath = cocos2d::FileUtils::getInstance()->getWritablePath().append(DATABASE_NAME);
     // Create/open database
-    {
-        int result = sqlite3_open_v2(dbPath.c_str(), &database, SQLITE_OPEN_CREATE | SQLITE_OPEN_READWRITE, NULL);
-        CCASSERT(result == SQLITE_OK, "Failed to open/create database!");
-    }
+    openDatabase();
     // Create tables if not present
     {
         std::ostringstream query;
@@ -33,26 +29,39 @@ DBManager::DBManager() {
         CCASSERT(result == SQLITE_OK, "Failed to create Plants table!");
     }
     // Run test statement
-    {
-        sqlite3_stmt *stmt;
-        auto query = std::string("SELECT name FROM sqlite_master WHERE type='table' AND name='").append(TABLE_PLANTS).append("'");
-        int result = sqlite3_prepare_v2(database, query.c_str(), -1, &stmt, NULL);
-        CCASSERT(result == SQLITE_OK, "Failed to select Plants table name!");
-        sqlite3_step(stmt);
-        const char* table_name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
-        CCLOG("%s", table_name);
-        CCASSERT(std::string(table_name) == TABLE_PLANTS, "Plants table doesn't exist");
-        sqlite3_finalize(stmt);
-        CCLOG("%s", table_name);
-    }
+//    {
+//        sqlite3_stmt *stmt;
+//        auto query = std::string("SELECT name FROM sqlite_master WHERE type='table' AND name='").append(TABLE_PLANTS).append("'");
+//        int result = sqlite3_prepare_v2(database, query.c_str(), -1, &stmt, NULL);
+//        CCASSERT(result == SQLITE_OK, "Failed to select Plants table name!");
+//        sqlite3_step(stmt);
+//        const char* table_name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
+//        CCASSERT(std::string(table_name) == TABLE_PLANTS, "Plants table doesn't exist");
+//        sqlite3_finalize(stmt);
+//    }
 }
 
 DBManager* DBManager::getInstance() {
-    if (dbManager == 0) {
+    if (dbManager == nullptr) {
         dbManager = new DBManager();
     }
-    
     return dbManager;
+}
+
+void DBManager::openDatabase() {
+    if (database == nullptr) {
+        std::string dbPath = cocos2d::FileUtils::getInstance()->getWritablePath().append(DATABASE_NAME);
+        int result = sqlite3_open_v2(dbPath.c_str(), &database, SQLITE_OPEN_CREATE | SQLITE_OPEN_READWRITE, NULL);
+        CCASSERT(result == SQLITE_OK, "Failed to open/create database!");
+    }
+}
+
+void DBManager::closeDatabase() {
+    if (database != nullptr) {
+        int result = sqlite3_close_v2(database);
+        CCASSERT(result == SQLITE_OK, "Failed to close database!");
+        database = nullptr;
+    }
 }
 
 void DBManager::savePlant(int landNumber, unsigned long plantTime, std::string plantType) {
@@ -70,34 +79,34 @@ Plant* DBManager::getPlant(int landNumber) {
     int result = sqlite3_prepare_v2(database, query.str().c_str(), -1, &stmt, NULL);
     CCASSERT(result == SQLITE_OK, std::string("Failed query: ").append(query.str()).c_str());
     sqlite3_step(stmt);
-    unsigned long plantTime = sqlite3_column_int(stmt, 2);
-    std::string plantType(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3)));
-    sqlite3_finalize(stmt);
-    return new Plant(plantTime, plantType);
+    if (sqlite3_column_type(stmt, 0) == SQLITE_NULL) {
+        sqlite3_finalize(stmt);
+        return nullptr;
+    } else {
+        unsigned long plantTime = sqlite3_column_int(stmt, 2);
+        std::string plantType(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3)));
+        sqlite3_finalize(stmt);
+        return Plant::create(plantTime, plantType);
+    }
 }
 
 cocos2d::Map<int, Plant*> DBManager::getPlants() {
     std::ostringstream query;
-    CCLOG("0");
     query << "SELECT * FROM " << TABLE_PLANTS;
-    CCLOG("1");
     sqlite3_stmt* stmt;
-    CCLOG("2");
     int result = sqlite3_prepare_v2(database, query.str().c_str(), -1, &stmt, NULL);
     CCASSERT(result == SQLITE_OK, std::string("Failed query: ").append(query.str()).c_str());
-    CCLOG("3 assert passed");
     sqlite3_step(stmt);
     cocos2d::Map<int, Plant*> plantMap = cocos2d::Map<int, Plant*>();
     while (result != SQLITE_DONE) {
-        int landNumber = sqlite3_column_int(stmt, 1);
-        CCLOG("4 landnum");
-        unsigned long plantTime = sqlite3_column_int(stmt, 2);
-        CCLOG("5 planttime");
-        const char* plantType = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
-        CCLOG("6 planttype");
-        // Add new plant to vector
-        plantMap.insert(landNumber, new Plant(plantTime, "standard"));
-        CCLOG("7 insertion");
+        if (sqlite3_column_type(stmt, 0) != SQLITE_NULL) {
+            int landNumber = sqlite3_column_int(stmt, 1);
+            unsigned long plantTime = sqlite3_column_int(stmt, 2);
+            const char* plantType = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
+            // Add plant to map
+            plantMap.insert(landNumber, Plant::create(plantTime));
+            CCLOG("plant data: %li, %i", plantTime, landNumber);
+        }
         result = sqlite3_step(stmt);
     }
     sqlite3_finalize(stmt);

@@ -13,22 +13,21 @@ public:
     
     // Init
     static Plant* create(unsigned long plantTime, std::string plantType);
+    static Plant* create(unsigned long plantTime);
     Plant(unsigned long plantTime = 0, std::string plantType = "standard");
     bool init() override;
 
     // Functions
     void update(float dt) override;
 
-    // Temporary
-    float time;
-
     // Getters and setters
+    /// growthStage
     const int getGrowthStage();
     void setGrowthStage(const int stage);
-
+    /// plantTime
     const unsigned long getPlantTime();
     void setPlantTime(const unsigned long plantTime);
-
+    // plantType
     const std::string getPlantType();
     void setPlantType(const std::string plantType);
 protected:

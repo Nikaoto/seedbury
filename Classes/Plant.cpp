@@ -10,13 +10,14 @@ const std::string Plant::TEXTURE_PATHS[4] = {
     "plant_2.png",
     "plant_3.png"
 };
-const int Plant::GROWTH_TIME = 5;
+const int Plant::GROWTH_TIME = 50;
 const int Plant::MIN_GROWTH_STAGE = 0;
 const int Plant::MAX_GROWTH_STAGE = 3;
 const int Plant::MARGIN_BOTTOM = 55;
 
 using namespace cocos2d;
 
+// Primary create
 Plant* Plant::create(unsigned long plantTime, std::string plantType) {
     Plant *pRet = new(std::nothrow) Plant(plantTime, plantType);
     if (pRet && pRet->init()) {
@@ -29,27 +30,23 @@ Plant* Plant::create(unsigned long plantTime, std::string plantType) {
     }
 }
 
+// Secondary create
+Plant* Plant::create(unsigned long plantTime) {
+    return Plant::create(plantTime, "standard");
+}
+
 Plant::Plant(unsigned long plantTime, std::string plantType) {
     this->plantTime = plantTime;
     this->plantType = plantType;
-    
-    if (plantTime != 0) {
-        // Calculate growthStage
-        unsigned long now = std::chrono::duration_cast<std::chrono::milliseconds>
-        (std::chrono::system_clock::now().time_since_epoch()).count();
-        auto elapsedSeconds = (now - plantTime) / 1000;
-        setGrowthStage((int)std::floor(elapsedSeconds / GROWTH_TIME));
-    }
 }
 
 bool Plant::init() {
     if (!Sprite::init()) {
         return false;
     }
-    
+    setGrowthStage(0);
     setTexture(TEXTURE_PATHS[0]);
     setAnchorPoint(Vec2(0, 0));
-    time = GROWTH_TIME;
     
     scheduleUpdate();
     
@@ -57,11 +54,14 @@ bool Plant::init() {
 }
 
 void Plant::update(float dt) {
+    // Update growth stage
     if (getGrowthStage() < MAX_GROWTH_STAGE) {
-        time -= dt;
-        if (time <= 0) {
-            setGrowthStage(getGrowthStage() + 1);
-            time = GROWTH_TIME;
+        auto now = std::chrono::duration_cast<std::chrono::milliseconds>
+        (std::chrono::system_clock::now().time_since_epoch()).count();
+        auto elapsedSeconds = std::floor((now - plantTime) / 1000);
+        if (elapsedSeconds > 0) {
+            auto stagesPassed = std::floor(elapsedSeconds / GROWTH_TIME);
+            setGrowthStage(stagesPassed);
         }
     }
 }

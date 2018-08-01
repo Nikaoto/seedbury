@@ -6,22 +6,28 @@ class Plant;
 
 class Land : public cocos2d::Sprite {
 public:
+    // Constants
     static const cocos2d::Size SIZE;
     static const std::string FERTILE_SPRITE;
     static const std::string INFERTILE_SPRITE;
 
+    // Init
+    static Land* create(int landNumber);
+    Land(int landNumber);
     bool init() override;
     
-    Plant* plant;
-    
+    // Getters and setters
+    /// landNumber
+    void setLandNumber(const int landNumber);
+    const int getLandNumber();
+    /// fertile
     void setFertile(bool fertile);
     const bool isFertile();
-    
-    void setLandNumber(int landNumber);
-    const int getLandNumber();
-    
-    CREATE_FUNC(Land);
+    /// plant
+    void setPlant(Plant* plant);
+    const Plant* getPlant();
 protected:
-    bool fertile;
     int landNumber;
+    bool fertile;
+    Plant* plant;
 };
