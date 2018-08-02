@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Plant.h"
 #include "Land.h"
+#include "timeutil.h"
 
 // Constants
 const cocos2d::Size Plant::SIZE = cocos2d::Size(128, 128);
@@ -57,8 +58,7 @@ bool Plant::init() {
 void Plant::update(float dt) {
     // Update growth stage
     if (getGrowthStage() < MAX_GROWTH_STAGE) {
-        unsigned long now = std::chrono::duration_cast<std::chrono::seconds>
-        (std::chrono::system_clock::now().time_since_epoch()).count();
+        unsigned long now = timeutil::getEpochSeconds();
         int elapsedSeconds = (int) (now - plantTime);
         if (elapsedSeconds > 0) {
             int stagesPassed = std::floor(elapsedSeconds / GROWTH_TIME);

@@ -2,6 +2,7 @@
 #include "Land.h"
 #include "Plant.h"
 #include "DBManager.h"
+#include "timeutil.h"
 
 // Constants
 const cocos2d::Size Land::SIZE = cocos2d::Size(128, 128);
@@ -52,8 +53,7 @@ bool Land::init() {
                 CCLOG("land %i fertile", this->landNumber);
                 if (plant == nullptr) {
                     // Seconds since epoch
-                    unsigned long now = std::chrono::duration_cast<std::chrono::seconds>
-                    (std::chrono::system_clock::now().time_since_epoch()).count();
+                    unsigned long now = timeutil::getEpochSeconds();
                     // Create new plant object
                     setPlant(Plant::create(now));
                     // Save to db
