@@ -122,6 +122,7 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* seedbury-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "seedbury-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2400E7ED21137B01008AB87C /* timeutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeutil.h; sourceTree = "<group>"; };
 		24086330210C6C85008D9435 /* land_fertile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = land_fertile.png; sourceTree = "<group>"; };
 		24086332210C6C85008D9435 /* land_infertile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = land_infertile.png; sourceTree = "<group>"; };
 		24224329210B251A00A09A30 /* Land.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Land.h; sourceTree = "<group>"; };
@@ -317,6 +318,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2400E7ED21137B01008AB87C /* timeutil.h */,
 				24C818BA211078E500887AF3 /* DBManager.cpp */,
 				24C818BC211078E500887AF3 /* DBManager.h */,
 				24BACE872110566700EE012C /* sqlite3.c */,
