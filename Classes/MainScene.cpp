@@ -15,17 +15,11 @@
 
 using namespace cocos2d;
 
-cocos2d::Scene* MainScene::createScene() {
-    return MainScene::create();
-}
-
 bool MainScene::init() {
     if (!Scene::init()) {
         return false;
     }
-    
-    auto dbManager = DBManager::getInstance();
-    
+        
     log("scene created");
 
     const auto director = Director::getInstance();
@@ -76,24 +70,38 @@ bool MainScene::init() {
             }
             
             land->setPosition(pos);
-//            if (plantMap.find(landCounter) != plantMap.end()) {
-//                log("plant exists at %i", landCounter);
-//                land->setFertile(true);
-//                land->setPlant(plantMap.at(landCounter));
-//                // TODO maybe implement plant adding from each land obj
-//            }
             landVector.pushBack(land);
             this->addChild(land);
             landCounter += 1;
         }
     }
     
-    // Set up touch listener
-//    auto listener = EventListenerTouchOneByOne::create();
-//    listener->onTouchBegan = [&](Touch* touch, Event* event) {
-//        return true;
-//    };
+    // Stats button
+    const auto margin = Vec2(30, 30);
+    auto statsButton = ui::Button::create();
+    const auto statsScale = 2;
+    statsButton->loadTextureNormal("ui/stats_button.png");
+    statsButton->setPressedActionEnabled(true);
+    statsButton->setZoomScale(0.3);
+    statsButton->setScale(statsScale);
+    statsButton->setPosition(Vec2(
+      origin.x + statsButton->getContentSize().width/2 * statsScale + margin.x,
+      origin.y + size.height - statsButton->getContentSize().height/2 * statsScale - margin.y));
+    this->addChild(statsButton);
     
-    //getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
+    // Set up touch listener
+    auto listener = EventListenerTouchOneByOne::create();
+    listener->onTouchBegan = [&](Touch* touch, Event* event) {
+        if (statsButton->getBoundingBox().containsPoint(touch->getLocation())) {
+            triggerMenu();
+        }
+        return true;
+    };
+    
+    getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
     return true;
+}
+
+void MainScene::triggerMenu() {
+    CCLOG("Ayyyy");
 }
