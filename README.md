@@ -3,6 +3,29 @@ Follow cli reference
 [here](http://www.cocos2d-x.org/docs/cocos2d-x/en/editors_and_tools/cocosCLTool.html) for building 
 and compilation instructions.
 
+## Light slider
+```
+#pragma region UI_SETUP
+    // Light slider
+    const auto margin = Vec2(30, 30);
+    auto slider = ui::Slider::create();
+    const auto sliderScale = 2;
+    slider->loadBarTexture("ui/slider_background.png");
+    slider->loadProgressBarTexture("ui/slider_foreground.png");
+    slider->loadSlidBallTextureNormal("ui/slider_thumb_normal.png");
+    //slider->loadSlidBallTextures("ui/slider_thumb_normal.png", 
+    "ui/slider_thumb_pressed.png", "ui/slider_thumb_disabled.png");
+    slider->setScale(sliderScale);
+    slider->setPosition(Vec2(
+    origin.x + size.width/2, 
+    origin.y + slider->getContentSize().height/2 * sliderScale + margin.y*1.5));
+    slider->setZoomScale(0.4);
+    slider->setPercent(50);
+    this->addChild(slider);
+#pragma endregion
+
+```
+
 ## Time api
 `https://www.worldtimeserver.com/handlers/GetData.ashx?action=GCTData&_=1532888676507`
 returns:
