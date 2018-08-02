@@ -1,6 +1,9 @@
 
 # Created by https://www.gitignore.io/api/cocos2dx
 
+### Sublime (temporary) ###
+*.sublime-workspace
+
 ### Cocos2dx ###
 # Ignore thumbnails created by windows
 Thumbs.db
