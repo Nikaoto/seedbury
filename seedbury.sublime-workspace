@@ -1122,7 +1122,7 @@
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -1226,12 +1226,12 @@
 		"selected_items":
 		[
 			[
-				"landh",
-				"Classes/Land.h"
-			],
-			[
 				"landc",
 				"Classes/Land.cpp"
+			],
+			[
+				"landh",
+				"Classes/Land.h"
 			],
 			[
 				"planth",
