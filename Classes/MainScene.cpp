@@ -90,15 +90,15 @@ bool MainScene::init() {
     this->addChild(statsButton);
     
     // Set up touch listener
-    auto listener = EventListenerTouchOneByOne::create();
-    listener->onTouchBegan = [&](Touch* touch, Event* event) {
+    this->touchListener = EventListenerTouchOneByOne::create();
+    touchListener->onTouchBegan = [&](Touch* touch, Event* event) {
         if (statsButton->getBoundingBox().containsPoint(touch->getLocation())) {
             triggerMenu();
         }
         return true;
     };
     
-    getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
+    getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
     return true;
 }
 

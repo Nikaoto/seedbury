@@ -11,5 +11,5 @@ public:
 
 protected:
     cocos2d::Vector<Land*> landVector;
-    //cocos2d::EventListenerTouchOneByOne listener;
+    cocos2d::EventListenerTouchOneByOne* touchListener;
 };
