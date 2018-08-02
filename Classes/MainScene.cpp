@@ -19,7 +19,8 @@ bool MainScene::init() {
     if (!Scene::init()) {
         return false;
     }
-        
+    touchListener = nullptr;
+    
     log("scene created");
 
     const auto director = Director::getInstance();
@@ -78,7 +79,7 @@ bool MainScene::init() {
     
     // Stats button
     const auto margin = Vec2(30, 30);
-    auto statsButton = ui::Button::create();
+    this->statsButton = ui::Button::create();
     const auto statsScale = 2;
     statsButton->loadTextureNormal("ui/stats_button.png");
     statsButton->setPressedActionEnabled(true);
@@ -87,18 +88,13 @@ bool MainScene::init() {
     statsButton->setPosition(Vec2(
       origin.x + statsButton->getContentSize().width/2 * statsScale + margin.x,
       origin.y + size.height - statsButton->getContentSize().height/2 * statsScale - margin.y));
-    this->addChild(statsButton);
-    
-    // Set up touch listener
-    this->touchListener = EventListenerTouchOneByOne::create();
-    touchListener->onTouchBegan = [&](Touch* touch, Event* event) {
-        if (statsButton->getBoundingBox().containsPoint(touch->getLocation())) {
+    statsButton->addTouchEventListener([&](Ref* pSender, ui::Widget::TouchEventType type) {
+        if (type == ui::Widget::TouchEventType::ENDED) {
             triggerMenu();
         }
-        return true;
-    };
+    });
+    this->addChild(statsButton, 2);
     
-    getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
     return true;
 }
 
