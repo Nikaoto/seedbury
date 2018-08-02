@@ -3,6 +3,27 @@ Follow cli reference
 [here](http://www.cocos2d-x.org/docs/cocos2d-x/en/editors_and_tools/cocosCLTool.html) for building 
 and compilation instructions.
 
+## UI touch listener
+### With lambda
+```
+statsButton->addTouchEventListener([&](Ref* pSender, ui::Widget::TouchEventType type) {
+    if (type == ui::Widget::TouchEventType::ENDED) {
+        triggerMenu();
+    }
+});
+```
+### With CC_CALLBACK_2
+```
+statsButton->addTouchEventListener(CC_CALLBACK_2(MainScene::triggerMenu, this));
+
+void MainScene::triggerMenu(Ref* pSender, Widget::TouchEventType type)
+{
+  if (type == ui::Widget::TouchEventType::ENDED) {
+      CCLOG("ayy")
+  }
+}
+```
+
 ## UI
 ```
 #pragma region UI_SETUP
