@@ -19,7 +19,6 @@ bool MainScene::init() {
     if (!Scene::init()) {
         return false;
     }
-    touchListener = nullptr;
     
     log("scene created");
 
