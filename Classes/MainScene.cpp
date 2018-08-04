@@ -85,14 +85,34 @@ bool MainScene::init() {
     statsButton->setZoomScale(0.3);
     statsButton->setScale(statsScale);
     statsButton->setPosition(Vec2(
-      origin.x + statsButton->getContentSize().width/2 * statsScale + margin.x,
-      origin.y + size.height - statsButton->getContentSize().height/2 * statsScale - margin.y));
+        origin.x + statsButton->getContentSize().width/2 * statsScale + margin.x,
+        origin.y + size.height - statsButton->getContentSize().height/2 * statsScale - margin.y));
     statsButton->addTouchEventListener([&](Ref* pSender, ui::Widget::TouchEventType type) {
         if (type == ui::Widget::TouchEventType::ENDED) {
             triggerMenu();
         }
     });
     this->addChild(statsButton, 2);
+    
+    // Dim everything behind
+    const Vec2 vertices[4] = {
+        Vec2(origin.x, origin.y),
+        Vec2(origin.x + size.width, origin.y),
+        Vec2(origin.x + size.width, origin.y + size.height),
+        Vec2(origin.x, origin.y + size.height)
+    };
+    auto drawNode = DrawNode::create();
+    const auto bgColor = Color4F(0, 0, 0, 127);
+    drawNode->drawPolygon(vertices, 4, bgColor, 0, bgColor);
+    this->addChild(drawNode, 2);
+    
+    // Menu panel
+    const auto menuTexture = director->getTextureCache()->addImage("menu_texture.jpg");
+    menuTexture->setTexParameters({ GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_REPEAT });
+    const auto menuRect = Rect(0, 0, size.width * 0.8, size.height * 0.8);
+    auto menuPanel = Sprite::createWithTexture(menuTexture, menuRect);
+    menuPanel->setPosition(origin.x + size.width/2, origin.y + size.height/2);
+    this->addChild(menuPanel, 3);
     
     return true;
 }
