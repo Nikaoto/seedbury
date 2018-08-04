@@ -5,10 +5,10 @@ and compilation instructions.
 
 # TODO
 - [ ] Menu
-  - [ ] Menu/MenuPanel class
-  - [ ] Background dimming
-  - [ ] Adjustable size
-  - [ ] Builder pattern
+  - [x] Menu/MenuPanel class
+  - [x] Background dimming
+  - [x] Adjustable size
+  - [x] Builder pattern
   - [ ] Outline
   - [ ] Outline with textures
 
