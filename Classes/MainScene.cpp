@@ -12,6 +12,7 @@
 #include "json/prettywriter.h"
 #include "Land.h"
 #include "DBManager.h"
+#include "MenuPanel.h"
 
 using namespace cocos2d;
 
@@ -93,27 +94,21 @@ bool MainScene::init() {
         }
     });
     this->addChild(statsButton, 2);
-    
-    // Dim everything behind
-    const Vec2 vertices[4] = {
-        Vec2(origin.x, origin.y),
-        Vec2(origin.x + size.width, origin.y),
-        Vec2(origin.x + size.width, origin.y + size.height),
-        Vec2(origin.x, origin.y + size.height)
-    };
-    auto drawNode = DrawNode::create();
-    const auto bgColor = Color4F(0, 0, 0, 127);
-    drawNode->drawPolygon(vertices, 4, bgColor, 0, bgColor);
-    this->addChild(drawNode, 2);
-    
-    // Menu panel
-    const auto menuTexture = director->getTextureCache()->addImage("menu_texture.jpg");
-    menuTexture->setTexParameters({ GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_REPEAT });
-    const auto menuRect = Rect(0, 0, size.width * 0.8, size.height * 0.8);
-    auto menuPanel = Sprite::createWithTexture(menuTexture, menuRect);
-    menuPanel->setPosition(origin.x + size.width/2, origin.y + size.height/2);
-    this->addChild(menuPanel, 3);
-    
+//
+//    CCLOG("building MP");
+//    const auto menuPanel = MenuPanel::Builder(director)
+//            .setTexturePath("menu_texture.jpg")
+//            .setText("Lorem ipsum dolor sit amet.")
+//            //.setPositiveButton("Yes", callbacky)
+//            //.setNegativeButton("No", callbackn)
+//            .setBackgroundDim(true)
+//            .setSize(size.width*0.8, size.height*0.8)
+//            .setPosition(origin.x + size.width * 0.5, origin.y + size.height * 0.5)
+//            .build();
+//    CCLOG("MP created");
+//    CCLOG("adding mp as child");
+//    this->addChild(menuPanel, 3);
+
     return true;
 }
 
