@@ -22,6 +22,8 @@ bool MainScene::init() {
     }
     
     log("scene created");
+    
+    this->menuPanel = nullptr;
 
     const auto director = Director::getInstance();
     const auto size = director->getVisibleSize();
@@ -94,24 +96,32 @@ bool MainScene::init() {
         }
     });
     this->addChild(statsButton, 2);
-//
-//    CCLOG("building MP");
-//    const auto menuPanel = MenuPanel::Builder(director)
-//            .setTexturePath("menu_texture.jpg")
-//            .setText("Lorem ipsum dolor sit amet.")
-//            //.setPositiveButton("Yes", callbacky)
-//            //.setNegativeButton("No", callbackn)
-//            .setBackgroundDim(true)
-//            .setSize(size.width*0.8, size.height*0.8)
-//            .setPosition(origin.x + size.width * 0.5, origin.y + size.height * 0.5)
-//            .build();
-//    CCLOG("MP created");
-//    CCLOG("adding mp as child");
-//    this->addChild(menuPanel, 3);
 
     return true;
 }
 
 void MainScene::triggerMenu() {
-    CCLOG("Ayyyy");
+    if (this->menuPanel == nullptr) {
+        // Create panel
+        const auto director = Director::getInstance();
+        const auto size = director->getVisibleSize();
+        const auto origin = director->getVisibleOrigin();
+        
+        CCLOG("building MP");
+        this->menuPanel = MenuPanel::Builder(director)
+                .setText("Lorem ipsum dolor sit amet.")
+                //.setPositiveButton("Yes", callbacky)
+                //.setNegativeButton("No", callbackn)
+                .setBackgroundDim(true)
+                .setSize(size.width*0.8, size.height*0.8)
+                .setPosition(origin.x + size.width * 0.5, origin.y + size.height * 0.5)
+                .build();
+        CCLOG("MP created");
+        CCLOG("adding mp as child");
+        this->addChild(this->menuPanel, 3);
+    } else {
+        // Remove panel
+        this->removeChild(this->menuPanel);
+        this->menuPanel = nullptr;
+    }
 }
