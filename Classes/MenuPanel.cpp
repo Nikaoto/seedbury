@@ -21,7 +21,9 @@ bool MenuPanel::init() {
     if (!cocos2d::Sprite::init()) {
         return false;
     }
-
+    
+    this->active = false;
+    
     const auto size = props.director->getVisibleSize();
     
     // Position
@@ -54,6 +56,17 @@ bool MenuPanel::init() {
     return true;
 }
 
+const bool MenuPanel::isActive() {
+    return this->active;
+}
+
+void MenuPanel::setActive(const bool active) {
+    this->active = active;
+}
+
+//========================//
+/*   MenuPanel Builder   */
+//========================//
 // Builder constructor
 MenuPanel::Builder::Builder(cocos2d::Director* director) {
     this->props.director = director;

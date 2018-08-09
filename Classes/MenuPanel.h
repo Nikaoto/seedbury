@@ -15,11 +15,16 @@ private:
         friend class Builder;
     };
     
+    // Initialization
     static MenuPanel* create(MenuProps& props);
     MenuPanel(MenuProps& props);
     bool init() override;
     
+    // Props set with builder
     MenuProps props;
+    
+    // Dynamic props
+    bool active;
 public:
     class Builder {
     private:
@@ -34,5 +39,8 @@ public:
         Builder& setTexturePath(std::string texturePath);
         MenuPanel* build();
     };
+    
+    const bool isActive();
+    void setActive(const bool active);
 };
 
