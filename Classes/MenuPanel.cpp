@@ -1,5 +1,6 @@
 #include "MenuPanel.h"
 #include "cocos2d.h"
+#include <functional>
 
 MenuPanel* MenuPanel::create(MenuPanel::MenuProps& props) {
     MenuPanel *pRet = new(std::nothrow) MenuPanel(props);
@@ -26,6 +27,7 @@ bool MenuPanel::init() {
     
     const auto size = props.director->getVisibleSize();
     
+    /* Setting props */
     // Position
     this->setPosition(props.position);
     // Background dim
@@ -52,6 +54,26 @@ bool MenuPanel::init() {
     tex->setTexParameters({ GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_REPEAT });
     const auto rect = cocos2d::Rect(0, 0, props.panelSize.width, props.panelSize.height);
     this->initWithTexture(tex, rect);
+    // Text
+    this->textLabel = cocos2d::Label::createWithTTF(props.text, "fonts/arial.ttf", 32);
+    const auto labelSize = this->textLabel->getContentSize();
+    const auto margin = cocos2d::Vec2(30, -30);
+    this->textLabel->setPosition(margin.x + labelSize.width/2, margin.y + props.panelSize.height);
+    this->addChild(textLabel, 1);
+    // Outside click callback
+    const auto listener = cocos2d::EventListenerTouchOneByOne::create();
+    listener->setSwallowTouches(true);
+    listener->onTouchBegan = [&](cocos2d::Touch* touch, cocos2d::Event* event) {
+        if (this->getBoundingBox().containsPoint(touch->getLocation())) {
+            // Tapped inside menu
+            return true;
+        } else if (props.outsideClickCallback != nullptr) {
+            props.outsideClickCallback();
+            return true;
+        }
+        return false;
+    };
+    getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
     
     return true;
 }
@@ -75,6 +97,7 @@ MenuPanel::Builder::Builder(cocos2d::Director* director) {
     this->props.text = "";
     this->props.texturePath = "menu_texture.jpg";
     this->props.position = cocos2d::Vec2(0, 0);
+    this->props.outsideClickCallback = nullptr;
 }
 
 MenuPanel::Builder& MenuPanel::Builder::setText(std::string text) {
@@ -99,6 +122,11 @@ MenuPanel::Builder& MenuPanel::Builder::setSize(const float width, const float h
 
 MenuPanel::Builder& MenuPanel::Builder::setPosition(const float x, const float y) {
     this->props.position = cocos2d::Vec2(x, y);
+    return *this;
+}
+
+MenuPanel::Builder& MenuPanel::Builder::onOutsideClick(std::function<void()> callback) {
+    this->props.outsideClickCallback = callback;
     return *this;
 }
 

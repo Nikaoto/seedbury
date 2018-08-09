@@ -10,6 +10,7 @@ private:
         std::string texturePath; // Used to load texture at build()
         cocos2d::Vec2 position;
         cocos2d::Director* director;
+        std::function<void()> outsideClickCallback;
         
         friend class MenuPanel;
         friend class Builder;
@@ -23,7 +24,8 @@ private:
     // Props set with builder
     MenuProps props;
     
-    // Dynamic props
+    // Other props
+    cocos2d::Label* textLabel;
     bool active;
 public:
     class Builder {
@@ -37,6 +39,7 @@ public:
         Builder& setSize(const float width, const float height);
         Builder& setPosition(const float x, const float y);
         Builder& setTexturePath(std::string texturePath);
+        Builder& onOutsideClick(std::function<void()> callback);
         MenuPanel* build();
     };
     
