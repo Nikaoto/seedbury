@@ -90,10 +90,13 @@ bool MainScene::init() {
     statsButton->setPosition(Vec2(
         origin.x + statsButton->getContentSize().width/2 * statsScale + margin.x,
         origin.y + size.height - statsButton->getContentSize().height/2 * statsScale - margin.y));
+    statsButton->setSwallowTouches(true);
     statsButton->addTouchEventListener([&](Ref* pSender, ui::Widget::TouchEventType type) {
         if (type == ui::Widget::TouchEventType::ENDED) {
             triggerMenu();
+            return true;
         }
+        return false;
     });
     this->addChild(statsButton, 2);
 
@@ -115,6 +118,10 @@ void MainScene::triggerMenu() {
                 .setBackgroundDim(true)
                 .setSize(size.width*0.8, size.height*0.8)
                 .setPosition(origin.x + size.width * 0.5, origin.y + size.height * 0.5)
+                .onOutsideClick([&]() {
+                    this->removeChild(this->menuPanel);
+                    this->menuPanel = nullptr;
+                })
                 .build();
         CCLOG("MP created");
         CCLOG("adding mp as child");
