@@ -2,9 +2,13 @@
 #include "cocos2d.h"
 
 class MenuPanel : public cocos2d::Sprite {
+public:
+    // Constants
+    static const cocos2d::Vec2 TEXT_MARGIN;
 private:
     class MenuProps {
         std::string text;
+        cocos2d::TTFConfig* ttfConfig;
         bool backgroundDim;
         cocos2d::Size panelSize;
         std::string texturePath; // Used to load texture at build()
@@ -35,6 +39,7 @@ public:
     public:
         Builder(cocos2d::Director* director);
         Builder& setText(std::string text);
+        Builder& setTTFConfig(cocos2d::TTFConfig* ttfConfig);
         Builder& setBackgroundDim(const bool backgroundDim);
         Builder& setSize(const float width, const float height);
         Builder& setPosition(const float x, const float y);

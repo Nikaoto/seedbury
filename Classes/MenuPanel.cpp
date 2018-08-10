@@ -2,6 +2,9 @@
 #include "cocos2d.h"
 #include <functional>
 
+// Constants
+const cocos2d::Vec2 MenuPanel::TEXT_MARGIN = cocos2d::Vec2(30, 30);
+
 MenuPanel* MenuPanel::create(MenuPanel::MenuProps& props) {
     MenuPanel *pRet = new(std::nothrow) MenuPanel(props);
     if (pRet && pRet->init()) {
@@ -28,8 +31,10 @@ bool MenuPanel::init() {
     const auto size = props.director->getVisibleSize();
     
     /* Setting props */
-    // Position
+    
+    // Panel position
     this->setPosition(props.position);
+    
     // Background dim
     if (props.backgroundDim) {
         const auto dimColor = cocos2d::Color4F(0, 0, 0, 127);
@@ -46,20 +51,36 @@ bool MenuPanel::init() {
         drawNode->setPosition(
             props.panelSize.width * ap.x - props.position.x,
             props.panelSize.height * ap.y - props.position.y);
-        //props.position.x - props.panelSize.width * ap.x, props.position.y - props.panelSize.height * ap.y);
         this->addChild(drawNode, -1);
     }
+    
     // Tile texture
     const auto tex = props.director->getTextureCache()->addImage(props.texturePath);
     tex->setTexParameters({ GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_REPEAT });
     const auto rect = cocos2d::Rect(0, 0, props.panelSize.width, props.panelSize.height);
     this->initWithTexture(tex, rect);
+    
     // Text
-    this->textLabel = cocos2d::Label::createWithTTF(props.text, "fonts/arial.ttf", 32);
+    // Use custom ttf config if specified
+    if (props.ttfConfig != nullptr) {
+        this->textLabel = cocos2d::Label::createWithTTF((*props.ttfConfig), props.text);
+    } else {
+        // Use default ttf config
+        auto ttfConfig = cocos2d::TTFConfig();
+        ttfConfig.outlineSize = 2;
+        ttfConfig.fontFilePath = "fonts/arial.ttf";
+        ttfConfig.fontSize = 34;
+        this->textLabel = cocos2d::Label::createWithTTF(ttfConfig, props.text);
+    }
+    this->textLabel->enableOutline(cocos2d::Color4B::BLACK);
+    this->textLabel->setMaxLineWidth(props.panelSize.width - TEXT_MARGIN.x * 2);
+    // Text position
     const auto labelSize = this->textLabel->getContentSize();
-    const auto margin = cocos2d::Vec2(30, -30);
-    this->textLabel->setPosition(margin.x + labelSize.width/2, margin.y + props.panelSize.height);
+    this->textLabel->setPosition(
+        TEXT_MARGIN.x + labelSize.width/2,
+        props.panelSize.height - TEXT_MARGIN.y - labelSize.height/2);
     this->addChild(textLabel, 1);
+    
     // Outside click callback
     const auto listener = cocos2d::EventListenerTouchOneByOne::create();
     listener->setSwallowTouches(true);
@@ -95,6 +116,7 @@ MenuPanel::Builder::Builder(cocos2d::Director* director) {
     // Set defaults
     this->props.backgroundDim = false;
     this->props.text = "";
+    this->props.ttfConfig = nullptr;
     this->props.texturePath = "menu_texture.jpg";
     this->props.position = cocos2d::Vec2(0, 0);
     this->props.outsideClickCallback = nullptr;
@@ -102,6 +124,11 @@ MenuPanel::Builder::Builder(cocos2d::Director* director) {
 
 MenuPanel::Builder& MenuPanel::Builder::setText(std::string text) {
     this->props.text = text;
+    return *this;
+}
+
+MenuPanel::Builder& MenuPanel::Builder::setTTFConfig(cocos2d::TTFConfig* ttfConfig) {
+    this->props.ttfConfig = ttfConfig;
     return *this;
 }
 
