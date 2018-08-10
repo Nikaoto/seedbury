@@ -112,7 +112,7 @@ void MainScene::triggerMenu() {
         
         CCLOG("building MP");
         this->menuPanel = MenuPanel::Builder(director)
-                .setText("Lorem ipsum dolor sit amet.")
+                .setText("Lorem ipsum dolor sit amet  test test test test test test test test vtest. test test test test test")
                 //.setPositiveButton("Yes", callbacky)
                 //.setNegativeButton("No", callbackn)
                 .setBackgroundDim(true)
