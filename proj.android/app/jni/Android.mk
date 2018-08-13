@@ -15,7 +15,12 @@ LOCAL_SRC_FILES := $(LOCAL_PATH)/hellocpp/main.cpp \
                    $(LOCAL_PATH)/../../../Classes/AppDelegate.cpp \
                    $(LOCAL_PATH)/../../../Classes/HelloWorldScene.cpp \
                    $(LOCAL_PATH)/../../../Classes/MainScene.cpp \
-                   $(LOCAL_PATH)/../../../Classes/InternetStatus.hpp
+                   $(LOCAL_PATH)/../../../Classes/InternetStatus.hpp \
+                   $(LOCAL_PATH)/../../../Classes/DBManager.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Land.cpp \
+                   $(LOCAL_PATH)/../../../Classes/MenuPanel.cpp \
+                   $(LOCAL_PATH)/../../../Classes/Plant.cpp \
+                   $(LOCAL_PATH)/../../../Classes/sqlite3.c
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes
 
