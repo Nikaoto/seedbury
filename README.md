@@ -4,13 +4,18 @@ Follow cli reference
 and compilation instructions.
 
 # TODO
+- [ ] Resize grass sprites
+- [ ] Add grass background
+- [ ] Update menu texture (round corners?)
+- [ ] Add random(?) grass sprite positions
 - [ ] Menu
   - [x] Menu/MenuPanel class
   - [x] Background dimming
   - [x] Adjustable size
   - [x] Builder pattern
-  - [ ] Outline
-  - [ ] Outline with textures
+  - [ ] Button support
+    - [ ] setPositiveButton(string text, function<void()> callback)
+    - [ ] setNegativeButton(string text, function<void()> callback)
 
 # Notes
 ## UI touch listener
