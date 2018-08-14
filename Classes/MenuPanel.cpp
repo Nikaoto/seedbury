@@ -6,7 +6,7 @@
 // Constants
 const cocos2d::Vec2 MenuPanel::TEXT_MARGIN = cocos2d::Vec2(30, 30);
 const cocos2d::Vec2 MenuPanel::BUTTON_MARGIN = cocos2d::Vec2(30, 30);
-const cocos2d::Size MenuPanel::BUTTON_SIZE = cocos2d::Size(230, 150);
+const cocos2d::Size MenuPanel::BUTTON_SIZE = cocos2d::Size(250, 150);
 
 MenuPanel* MenuPanel::create(MenuPanel::MenuProps& props) {
     MenuPanel *pRet = new(std::nothrow) MenuPanel(props);
@@ -100,6 +100,10 @@ bool MenuPanel::init() {
     
     // Positive button
     if (props.positiveButton != nullptr) {
+        // Adjust position
+        const auto bottomLeft = cocos2d::Vec2(0, 0);
+        props.positiveButton->setAnchorPoint(cocos2d::Vec2(0, 0));
+        props.positiveButton->setPosition(cocos2d::Vec2(bottomLeft.x + BUTTON_MARGIN.x, bottomLeft.y + BUTTON_MARGIN.y));
         // Setup click callback
         props.positiveButton->addTouchEventListener([&](Ref* sender, cocos2d::ui::Widget::TouchEventType type) {
             if (type == cocos2d::ui::Widget::TouchEventType::ENDED) {
@@ -107,6 +111,21 @@ bool MenuPanel::init() {
             }
         });
         this->addChild(props.positiveButton, 1);
+    }
+    
+    // Negative button
+    if (props.negativeButton != nullptr) {
+        // Adjust position
+        const auto bottomRight = cocos2d::Vec2(props.panelSize.width, 0);
+        props.negativeButton->setAnchorPoint(cocos2d::Vec2(1, 0));
+        props.negativeButton->setPosition(cocos2d::Vec2(bottomRight.x - BUTTON_MARGIN.x, bottomRight.y + BUTTON_MARGIN.y));
+        // Setup click callback
+        props.negativeButton->addTouchEventListener([&](Ref* sender, cocos2d::ui::Widget::TouchEventType type) {
+            if (type == cocos2d::ui::Widget::TouchEventType::ENDED) {
+                props.negativeButtonCallback();
+            }
+        });
+        this->addChild(props.negativeButton, 1);
     }
 
     return true;
@@ -135,7 +154,8 @@ MenuPanel::Builder::Builder(cocos2d::Director* director) {
     this->props.outsideClickCallback = nullptr;
     this->props.positiveButton = nullptr;
     this->props.positiveButtonCallback = nullptr;
-    //this->props.negativeButton = nullptr;
+    this->props.negativeButton = nullptr;
+    this->props.negativeButtonCallback = nullptr;
 }
 
 MenuPanel::Builder& MenuPanel::Builder::setText(std::string text) {
@@ -177,16 +197,21 @@ MenuPanel::Builder& MenuPanel::Builder::setPositiveButton(std::string text, std:
     auto btn = cocos2d::ui::Button::create("ui/button_normal.png", "ui/button_pressed.png");
     btn->setTitleText(text);
     btn->setTitleColor(cocos2d::Color3B::BLACK);
-    btn->setScale9Enabled(true);
     const auto s = btn->getContentSize();
     btn->setScale(BUTTON_SIZE.width / s.width, BUTTON_SIZE.height / s.height);
-    btn->setAnchorPoint(cocos2d::Vec2(0, 0));
-    const auto bottomLeftPosition = cocos2d::Vec2(
-        this->props.position.x - this->props.panelSize.width / 2,
-        this->props.position.y - this->props.panelSize.height / 2);
-    btn->setPosition(cocos2d::Vec2(bottomLeftPosition.x + BUTTON_MARGIN.x, bottomLeftPosition.y + BUTTON_MARGIN.y));
     this->props.positiveButtonCallback = callback;
     this->props.positiveButton = btn;
+    return *this;
+}
+
+MenuPanel::Builder& MenuPanel::Builder::setNegativeButton(std::string text, std::function<void()> callback) {
+    auto btn = cocos2d::ui::Button::create("ui/button_normal.png", "ui/button_pressed.png");
+    btn->setTitleText(text);
+    btn->setTitleColor(cocos2d::Color3B::BLACK);
+    const auto s = btn->getContentSize();
+    btn->setScale(BUTTON_SIZE.width / s.width, BUTTON_SIZE.height / s.height);
+    this->props.negativeButtonCallback = callback;
+    this->props.negativeButton = btn;
     return *this;
 }
 

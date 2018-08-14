@@ -20,7 +20,8 @@ private:
         std::function<void()> outsideClickCallback;
         cocos2d::ui::Button* positiveButton;
         std::function<void()> positiveButtonCallback;
-        //cocos2d::ui::Button* negativeButton;
+        cocos2d::ui::Button* negativeButton;
+        std::function<void()> negativeButtonCallback;
         
         friend class MenuPanel;
         friend class Builder;
@@ -52,7 +53,7 @@ public:
         Builder& setTexturePath(std::string texturePath);
         Builder& onOutsideClick(std::function<void()> callback);
         Builder& setPositiveButton(std::string text, std::function<void()> callback);
-        //Builder& setNegativeButton(std::string text, std::function<void()> callback);
+        Builder& setNegativeButton(std::string text, std::function<void()> callback);
         MenuPanel* build();
     };
     
