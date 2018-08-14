@@ -31,20 +31,9 @@ bool MainScene::init() {
     
     // Background
     director->setClearColor(Color4F::WHITE);
-    const auto grass_tile_size = Size(200, 200);
-    /// Tile prototype
-    const auto grass = Sprite::create("grass.jpg");
-    grass->setScale(grass_tile_size.width / grass->getContentSize().width, grass_tile_size.height / grass->getContentSize().width);
-    /// Clone grass tiles
-    for (int x = 0; x < size.width; x += grass_tile_size.width) {
-        for (int y = size.height + 1; y > 0; y -= grass_tile_size.height) {
-            auto tempGrass = Sprite::createWithTexture(grass->getTexture());
-            tempGrass->setScale(grass->getScaleX(), grass->getScaleY());
-            tempGrass->setAnchorPoint(Vec2(0, 1));
-            tempGrass->setPosition(x, y);
-            this->addChild(tempGrass, -3);
-        }
-    }
+    const auto grassBackground = Sprite::create("grass_background.jpg");
+    grassBackground->setPosition(origin.x + size.width/2, origin.y + size.height/2);
+    this->addChild(grassBackground, -3);
 
     // Land grids
     const auto grid_margin = 10;
