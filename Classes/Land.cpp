@@ -55,7 +55,7 @@ bool Land::init() {
                     // Seconds since epoch
                     unsigned long now = timeutil::getEpochSeconds();
                     // Create new plant object
-                    setPlant(Plant::create(now));
+                    setPlant(Plant::create(now, "Tomato"));
                     // Save to db
                     DBManager::getInstance()->savePlant(this->landNumber, plant->getPlantTime(), plant->getPlantType());
                 } else {

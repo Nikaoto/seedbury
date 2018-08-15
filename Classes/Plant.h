@@ -5,16 +5,15 @@ class Plant : public cocos2d::Sprite {
 public:
     // Constants
     static const cocos2d::Size SIZE;
-    static const std::string TEXTURE_PATHS[4];
-    static const int GROWTH_TIME;
+    static const std::map<const std::string, std::string[4]> TEXTURE_PATHS;
+    static const std::map<const std::string, const int> GROWTH_TIMES;
     static const int MIN_GROWTH_STAGE;
     static const int MAX_GROWTH_STAGE;
     static const int MARGIN_BOTTOM;
     
     // Init
-    static Plant* create(unsigned long plantTime, std::string plantType);
-    static Plant* create(unsigned long plantTime);
-    Plant(unsigned long plantTime = 0, std::string plantType = "standard");
+    Plant(unsigned long plantTime = 0, std::string plantType = "Standard");
+    static Plant* create(unsigned long plantTime, std::string plantType = "Standard");
     bool init() override;
 
     // Functions
@@ -29,9 +28,10 @@ public:
     void setPlantTime(const unsigned long plantTime);
     // plantType
     const std::string getPlantType();
-    void setPlantType(const std::string plantType);
 protected:
-    unsigned long plantTime;
-    std::string plantType;
-    int growthStage;
+    std::string* texturePaths;
+    int growthTime; // Time it takes to grow one stage
+    std::string plantType; // Type of plant
+    int growthStage; // Current growth stage
+    unsigned long plantTime; // When plant was planted
 };

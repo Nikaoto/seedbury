@@ -5,20 +5,28 @@
 
 // Constants
 const cocos2d::Size Plant::SIZE = cocos2d::Size(128, 128);
-const std::string Plant::TEXTURE_PATHS[4] = {
-    "plant_0.png",
-    "plant_1.png",
-    "plant_2.png",
-    "plant_3.png"
-};
-const int Plant::GROWTH_TIME = 10;
 const int Plant::MIN_GROWTH_STAGE = 0;
 const int Plant::MAX_GROWTH_STAGE = 3;
 const int Plant::MARGIN_BOTTOM = 55;
 
+struct PlantData {
+    std::string type;
+    int growthTime;
+    std::string* texturePaths;
+    PlantData(std::string type, int growthTime, std::string* texturePaths) {
+        this->type = type;
+        this->growthTime = growthTime;
+        this->texturePaths = texturePaths;
+    }
+};
+
+const std::map<const std::string, const PlantData> PLANT_DATA = {
+    {"Standard", PlantData("Standard", 10, new std::string[4] {"plant_0.png", "plant_1.png", "plant_2.png", "plant_3.png"})},
+    {"Tomato", PlantData("Tomato", 3, new std::string[4] {"plant_0.png", "plant_tomato_1.png", "plant_tomato_2.png", "plant_tomato_3.png"})}
+};
+
 using namespace cocos2d;
 
-// Primary create
 Plant* Plant::create(unsigned long plantTime, std::string plantType) {
     Plant *pRet = new(std::nothrow) Plant(plantTime, plantType);
     if (pRet && pRet->init()) {
@@ -31,14 +39,12 @@ Plant* Plant::create(unsigned long plantTime, std::string plantType) {
     }
 }
 
-// Secondary create
-Plant* Plant::create(unsigned long plantTime) {
-    return Plant::create(plantTime, "standard");
-}
-
 Plant::Plant(unsigned long plantTime, std::string plantType) {
     this->plantTime = plantTime;
     this->plantType = plantType;
+    
+    this->growthTime = PLANT_DATA.at(plantType).growthTime;
+    this->texturePaths = PLANT_DATA.at(plantType).texturePaths;
 }
 
 bool Plant::init() {
@@ -47,7 +53,7 @@ bool Plant::init() {
     }
     
     setGrowthStage(0);
-    setTexture(TEXTURE_PATHS[0]);
+    setTexture(this->texturePaths[0]);
     setAnchorPoint(Vec2(0, 0));
     
     scheduleUpdate();
@@ -61,7 +67,7 @@ void Plant::update(float dt) {
         unsigned long now = timeutil::getEpochSeconds();
         int elapsedSeconds = (int) (now - plantTime);
         if (elapsedSeconds > 0) {
-            int stagesPassed = std::floor(elapsedSeconds / GROWTH_TIME);
+            int stagesPassed = std::floor(elapsedSeconds / this->growthTime);
             setGrowthStage(stagesPassed);
         }
     }
@@ -78,7 +84,7 @@ void Plant::setGrowthStage(const int stage) {
         this->growthStage = stage;
     }
     // Update texture
-    this->setTexture(TEXTURE_PATHS[growthStage]);
+    this->setTexture(this->texturePaths[growthStage]);
 }
 
 const int Plant::getGrowthStage() {
@@ -91,10 +97,6 @@ void Plant::setPlantTime(const unsigned long plantTime){
 
 const unsigned long Plant::getPlantTime() {
     return this->plantTime;
-}
-
-void Plant::setPlantType(const std::string plantType){
-    this->plantType = plantType;
 }
 
 const std::string Plant::getPlantType() {
