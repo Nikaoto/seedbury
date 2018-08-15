@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Plant.h"
 #include "Land.h"
 #include "timeutil.h"
@@ -9,20 +8,13 @@ const int Plant::MIN_GROWTH_STAGE = 0;
 const int Plant::MAX_GROWTH_STAGE = 3;
 const int Plant::MARGIN_BOTTOM = 55;
 
-struct PlantData {
-    std::string type;
-    int growthTime;
-    std::string* texturePaths;
-    PlantData(std::string type, int growthTime, std::string* texturePaths) {
-        this->type = type;
-        this->growthTime = growthTime;
-        this->texturePaths = texturePaths;
-    }
+const std::string Plant::PLANT_TYPES[2] = {
+    "Standard", "Tomato"
 };
 
-const std::map<const std::string, const PlantData> PLANT_DATA = {
-    {"Standard", PlantData("Standard", 10, new std::string[4] {"plant_0.png", "plant_1.png", "plant_2.png", "plant_3.png"})},
-    {"Tomato", PlantData("Tomato", 3, new std::string[4] {"plant_0.png", "plant_tomato_1.png", "plant_tomato_2.png", "plant_tomato_3.png"})}
+const std::map<std::string, PlantData> Plant::PLANT_DATA = {
+    {PLANT_TYPES[0], PlantData(PLANT_TYPES[0], 10, new std::string[4] {"plant_0.png", "plant_1.png", "plant_2.png", "plant_3.png"})},
+    {PLANT_TYPES[1], PlantData(PLANT_TYPES[1], 3, new std::string[4] {"plant_0.png", "plant_tomato_1.png", "plant_tomato_2.png", "plant_tomato_3.png"})}
 };
 
 using namespace cocos2d;

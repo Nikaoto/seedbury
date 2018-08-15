@@ -1,12 +1,23 @@
 #pragma once
 #include "cocos2d.h"
 
+struct PlantData {
+    std::string type;
+    int growthTime;
+    std::string* texturePaths;
+    PlantData(std::string type, int growthTime, std::string* texturePaths) {
+        this->type = type;
+        this->growthTime = growthTime;
+        this->texturePaths = texturePaths;
+    }
+};
+
 class Plant : public cocos2d::Sprite {
 public:
     // Constants
     static const cocos2d::Size SIZE;
-    static const std::map<const std::string, std::string[4]> TEXTURE_PATHS;
-    static const std::map<const std::string, const int> GROWTH_TIMES;
+    static const std::string PLANT_TYPES[2];
+    static const std::map<std::string, PlantData> PLANT_DATA;
     static const int MIN_GROWTH_STAGE;
     static const int MAX_GROWTH_STAGE;
     static const int MARGIN_BOTTOM;
