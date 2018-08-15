@@ -28,6 +28,9 @@
 		2428B255210CCDA500EB00DA /* Plant.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2428B253210CCDA500EB00DA /* Plant.cpp */; };
 		2467582121158A6E00914B02 /* menu_texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2467581F21158A6E00914B02 /* menu_texture.jpg */; };
 		246758242115DF8000914B02 /* MenuPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 246758232115DF8000914B02 /* MenuPanel.cpp */; };
+		24AFE2E621242BE4004B2BF4 /* plant_tomato_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 24AFE2E321242BE4004B2BF4 /* plant_tomato_1.png */; };
+		24AFE2E721242BE4004B2BF4 /* plant_tomato_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 24AFE2E421242BE4004B2BF4 /* plant_tomato_2.png */; };
+		24AFE2E821242BE4004B2BF4 /* plant_tomato_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 24AFE2E521242BE4004B2BF4 /* plant_tomato_3.png */; };
 		24BACE882110566700EE012C /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 24BACE872110566700EE012C /* sqlite3.c */; };
 		24C818BD211078E500887AF3 /* DBManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24C818BA211078E500887AF3 /* DBManager.cpp */; };
 		24EA4CDE2108B6E40080AB0F /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24EA4CDA2108B6E40080AB0F /* MainScene.cpp */; };
@@ -142,6 +145,9 @@
 		2467581F21158A6E00914B02 /* menu_texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = menu_texture.jpg; sourceTree = "<group>"; };
 		246758222115DF7F00914B02 /* MenuPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuPanel.h; sourceTree = "<group>"; };
 		246758232115DF8000914B02 /* MenuPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuPanel.cpp; sourceTree = "<group>"; };
+		24AFE2E321242BE4004B2BF4 /* plant_tomato_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plant_tomato_1.png; sourceTree = "<group>"; };
+		24AFE2E421242BE4004B2BF4 /* plant_tomato_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plant_tomato_2.png; sourceTree = "<group>"; };
+		24AFE2E521242BE4004B2BF4 /* plant_tomato_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plant_tomato_3.png; sourceTree = "<group>"; };
 		24BACE862110566700EE012C /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 		24BACE872110566700EE012C /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
 		24C818BA211078E500887AF3 /* DBManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DBManager.cpp; sourceTree = "<group>"; };
@@ -309,6 +315,9 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				24AFE2E321242BE4004B2BF4 /* plant_tomato_1.png */,
+				24AFE2E421242BE4004B2BF4 /* plant_tomato_2.png */,
+				24AFE2E521242BE4004B2BF4 /* plant_tomato_3.png */,
 				24EF40482122ED7000CAF731 /* button_normal.png */,
 				24EF40472122ED7000CAF731 /* button_pressed.png */,
 				2467581F21158A6E00914B02 /* menu_texture.jpg */,
@@ -481,6 +490,8 @@
 				2428B250210CC80B00EB00DA /* plant_1.png in Resources */,
 				24EA4CE82108BC4B0080AB0F /* ui in Resources */,
 				24086333210C6C86008D9435 /* land_fertile.png in Resources */,
+				24AFE2E821242BE4004B2BF4 /* plant_tomato_3.png in Resources */,
+				24AFE2E621242BE4004B2BF4 /* plant_tomato_1.png in Resources */,
 				24EF404A2122ED7000CAF731 /* button_normal.png in Resources */,
 				1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */,
 				2467582121158A6E00914B02 /* menu_texture.jpg in Resources */,
@@ -491,6 +502,7 @@
 				24086334210C6C86008D9435 /* land_infertile.png in Resources */,
 				2428B24A210CA1A000EB00DA /* grass.jpg in Resources */,
 				2428B252210CC80B00EB00DA /* plant_3.png in Resources */,
+				24AFE2E721242BE4004B2BF4 /* plant_tomato_2.png in Resources */,
 				24EF40462122E13F00CAF731 /* grass_background.jpg in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				24EF40492122ED7000CAF731 /* button_pressed.png in Resources */,
