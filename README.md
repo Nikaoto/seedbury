@@ -17,10 +17,10 @@ and compilation instructions.
 - [ ] Add harvest func when plant fully grown
   - [ ] Add sql abstraction
 - [ ] Plant menu
-  - [ ] Create plant class
+  - [x] Create plant class
     - [ ] Add description std::string
-    - [ ] Add sprout time
-  - [ ] Add red plant placeholder + TomatoPlant class
+    - [x] Add sprout time
+  - [x] Add red plant placeholder + TomatoPlant class
   - [ ] Add green plant placeholder + BroccoliSproutPlant class
   - [ ] Add scrolling menu w/ plant icons
 
