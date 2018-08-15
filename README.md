@@ -4,18 +4,25 @@ Follow cli reference
 and compilation instructions.
 
 # TODO
-- [ ] Resize grass sprites
-- [ ] Add grass background
+- [x] Add grass background
 - [ ] Update menu texture (round corners?)
-- [ ] Add random(?) grass sprite positions
-- [ ] Menu
+- [x] Menu
   - [x] Menu/MenuPanel class
   - [x] Background dimming
   - [x] Adjustable size
   - [x] Builder pattern
-  - [ ] Button support
-    - [ ] setPositiveButton(string text, function<void()> callback)
-    - [ ] setNegativeButton(string text, function<void()> callback)
+  - [x] Button support
+    - [x] setPositiveButton(string text, function<void()> callback)
+    - [x] setNegativeButton(string text, function<void()> callback)
+- [ ] Add harvest func when plant fully grown
+  - [ ] Add sql abstraction
+- [ ] Plant menu
+  - [ ] Create plant class
+    - [ ] Add description std::string
+    - [ ] Add sprout time
+  - [ ] Add red plant placeholder + TomatoPlant class
+  - [ ] Add green plant placeholder + BroccoliSproutPlant class
+  - [ ] Add scrolling menu w/ plant icons
 
 # Notes
 ## UI touch listener
