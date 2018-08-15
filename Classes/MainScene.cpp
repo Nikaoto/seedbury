@@ -108,8 +108,7 @@ void MainScene::triggerMenu() {
                 .setNegativeButton("No", [&]() { CCLOG("NEG BTN PRESSED"); })
                 .setBackgroundDim(true)
                 .onOutsideClick([&]() {
-                    this->removeChild(this->menuPanel);
-                    this->menuPanel = nullptr;
+                    this->triggerMenu();
                 })
                 .build();
         CCLOG("MP created");
