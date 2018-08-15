@@ -22,7 +22,7 @@ and compilation instructions.
     - [x] Add sprout time
   - [x] Add red plant placeholder + TomatoPlant class
   - [ ] Add green plant placeholder + BroccoliSproutPlant class
-  - [ ] Add scrolling menu w/ plant icons
+  - [x] Add scrolling menu w/ plant icons
 
 # Notes
 ## UI touch listener
