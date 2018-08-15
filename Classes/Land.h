@@ -15,7 +15,10 @@ public:
     static Land* create(int landNumber);
     Land(int landNumber);
     bool init() override;
-    
+
+    //
+    void plantPlant(std::string plantType);
+
     // Getters and setters
     /// landNumber
     void setLandNumber(const int landNumber);
@@ -26,8 +29,11 @@ public:
     /// plant
     void setPlant(Plant* plant);
     const Plant* getPlant();
+    /// plantMenuCallback
+    void setPlantMenuCallback(std::function<void(int senderLandNumber)> callback);
 protected:
     int landNumber;
     bool fertile;
     Plant* plant;
+    std::function<void(int senderLandNumber)> plantMenuCallback;
 };

@@ -43,12 +43,10 @@ bool MainScene::init() {
     const auto vertical_land_count = 3;
     const auto land_count = horizontal_land_count * vertical_land_count;
     // Store each land object
-    auto landVector = cocos2d::Vector<Land*>(land_count);
+    this->landVector = cocos2d::Vector<Land*>(land_count);
     // Starting position
     auto p = Vec2(origin.x + margin_horizontal, origin.y + size.height - margin_vertical);
     int landCounter = 0;
-    // Get all plants from db
-    //auto plantMap = dbManager->getPlants();
     // Draw both 3x3 grids
     for (int x = 0; x < horizontal_land_count; x++) {
         for (int y = 0; y < vertical_land_count; y++) {
@@ -62,7 +60,10 @@ bool MainScene::init() {
             }
             
             land->setPosition(pos);
-            landVector.pushBack(land);
+            land->setPlantMenuCallback([&](int senderLandNumber){
+                this->triggerPlantMenu(senderLandNumber);
+            });
+            this->landVector.pushBack(land);
             this->addChild(land);
             landCounter += 1;
         }
@@ -119,4 +120,42 @@ void MainScene::triggerMenu() {
         this->removeChild(this->menuPanel);
         this->menuPanel = nullptr;
     }
+}
+
+void MainScene::triggerPlantMenu(int senderLandNumber) {
+    // Set selected land
+    CCLOG("AAAAAA");
+    this->selectedLand = this->landVector.at(senderLandNumber);
+    CCLOG("UUUUU");
+
+    // Pop up plant menu
+    const auto s = Director::getInstance()->getVisibleSize();
+    const auto o = Director::getInstance()->getVisibleOrigin();
+    this->scrollView = ui::ScrollView::create();
+    scrollView->setDirection(ui::ScrollView::Direction::HORIZONTAL);
+    scrollView->setContentSize(Size(s.width, s.height));
+    scrollView->setInnerContainerSize(Size(s.width, Plant::SIZE.height));
+    scrollView->setBackGroundColorType(ui::Layout::BackGroundColorType::SOLID);
+    scrollView->setBackGroundColor(Color3B::BLACK);
+    //scrollView->setBackGroundColorOpacity(127);
+    scrollView->setBounceEnabled(true);
+    scrollView->setAnchorPoint(Vec2(0.5, 0.5));
+    scrollView->setPosition(Vec2(o.x + s.width/2, o.y + s.height/2));
+
+    // Populate with plant buttons
+    unsigned int i = 0;
+    for (const auto& element : Plant::PLANT_DATA) {
+        auto b = ui::Button::create(element.second.texturePaths[3]);
+        b->setPosition(Vec2(s.width*0.2 + i * Plant::SIZE.width + i * 200, scrollView->getContentSize().height/2));
+		b->addClickEventListener([&](Ref* target) {
+			this->selectedLand->plantPlant(element.second.type);
+            this->scrollView->removeFromParent();
+            this->scrollView = nullptr;
+            this->selectedLand = nullptr;
+		});
+        scrollView->addChild(b);
+        i++;
+    }
+
+    this->addChild(scrollView, 4);
 }

@@ -3,6 +3,7 @@
 #include "Plant.h"
 #include "DBManager.h"
 #include "timeutil.h"
+#include "ui/CocosGUI.h"
 
 // Constants
 const cocos2d::Size Land::SIZE = cocos2d::Size(128, 128);
@@ -43,23 +44,19 @@ bool Land::init() {
         plant = nullptr;
         fertile = false;
     }
-    
+
     // Set up listener
     auto listener = EventListenerTouchOneByOne::create();
     listener->onTouchBegan = [&](Touch* touch, Event* event) {
         if (getBoundingBox().containsPoint(touch->getLocation())) {
-            CCLOG("click land %i", this->landNumber);
             if (isFertile()) {
-                CCLOG("land %i fertile", this->landNumber);
-                if (plant == nullptr) {
-                    // Seconds since epoch
-                    unsigned long now = timeutil::getEpochSeconds();
-                    // Create new plant object
-                    setPlant(Plant::create(now, "Tomato"));
-                    // Save to db
-                    DBManager::getInstance()->savePlant(this->landNumber, plant->getPlantTime(), plant->getPlantType());
+				if (plant != nullptr && plant->getGrowthStage() == plant->MAX_GROWTH_STAGE) {
+				    CCLOG("HARVEST");
+				} else if (plant == nullptr) {
+				    CCLOG("OPEN PLANT MENU from plant %i", this->getLandNumber());
+                    this->plantMenuCallback(this->getLandNumber());
                 } else {
-                    //plant->setGrowthStage(plant->getGrowthStage() + 1);
+                    // open plant info or removal
                 }
             } else {
                 setFertile(true);
@@ -71,6 +68,13 @@ bool Land::init() {
     getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
     
     return true;
+}
+
+void Land::plantPlant(std::string plantType) {
+    // Create new plant object
+    setPlant(Plant::create(timeutil::getEpochSeconds(), plantType));
+    // Save to db
+    DBManager::getInstance()->savePlant(this->landNumber, plant->getPlantTime(), plant->getPlantType());
 }
 
 void Land::setFertile(bool fertile){
@@ -105,4 +109,8 @@ void Land::setPlant(Plant* plant) {
 
 const Plant* Land::getPlant() {
     return this->plant;
+}
+
+void Land::setPlantMenuCallback(std::function<void(int senderLandNumber)> callback) {
+    this->plantMenuCallback = callback;
 }
