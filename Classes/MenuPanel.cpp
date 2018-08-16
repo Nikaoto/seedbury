@@ -6,7 +6,7 @@
 // Constants
 const cocos2d::Vec2 MenuPanel::TEXT_MARGIN = cocos2d::Vec2(30, 30);
 const cocos2d::Vec2 MenuPanel::BUTTON_MARGIN = cocos2d::Vec2(30, 30);
-const cocos2d::Size MenuPanel::BUTTON_SIZE = cocos2d::Size(250, 150);
+const cocos2d::Size MenuPanel::BUTTON_SIZE = cocos2d::Size(200, 140);
 
 MenuPanel* MenuPanel::create(MenuPanel::MenuProps& props) {
     MenuPanel *pRet = new(std::nothrow) MenuPanel(props);
@@ -193,25 +193,34 @@ MenuPanel::Builder& MenuPanel::Builder::onOutsideClick(std::function<void()> cal
     return *this;
 }
 
-MenuPanel::Builder& MenuPanel::Builder::setPositiveButton(std::string text, std::function<void()> callback) {
-    auto btn = cocos2d::ui::Button::create("ui/button_normal.png", "ui/button_pressed.png");
-    btn->setTitleText(text);
-    btn->setTitleColor(cocos2d::Color3B::BLACK);
+// Generates new button for menu
+cocos2d::ui::Button* newButton(std::string text, cocos2d::Size size, std::string texturePath = "ui/button_normal.png",
+        std::string fontPath = "fonts/arial.ttf") {
+    auto btn = cocos2d::ui::Button::create(texturePath);
+    // Configure text
+    auto ttfConfig = cocos2d::TTFConfig();
+    ttfConfig.outlineSize = 3;
+    ttfConfig.fontFilePath = fontPath;
+    ttfConfig.fontSize = 50;
+    auto l = cocos2d::Label::createWithTTF(ttfConfig, text);
+    l->setTextColor(cocos2d::Color4B::WHITE);
+    l->enableOutline(cocos2d::Color4B(60, 40, 0, 255));
+    btn->setTitleLabel(l);
+    // Configure scale
     const auto s = btn->getContentSize();
-    btn->setScale(BUTTON_SIZE.width / s.width, BUTTON_SIZE.height / s.height);
+    btn->setScale(size.width / s.width, size.height / s.height);
+    return btn;
+}
+
+MenuPanel::Builder& MenuPanel::Builder::setPositiveButton(std::string text, std::function<void()> callback) {
     this->props.positiveButtonCallback = callback;
-    this->props.positiveButton = btn;
+    this->props.positiveButton = newButton(text, BUTTON_SIZE);
     return *this;
 }
 
 MenuPanel::Builder& MenuPanel::Builder::setNegativeButton(std::string text, std::function<void()> callback) {
-    auto btn = cocos2d::ui::Button::create("ui/button_normal.png", "ui/button_pressed.png");
-    btn->setTitleText(text);
-    btn->setTitleColor(cocos2d::Color3B::BLACK);
-    const auto s = btn->getContentSize();
-    btn->setScale(BUTTON_SIZE.width / s.width, BUTTON_SIZE.height / s.height);
     this->props.negativeButtonCallback = callback;
-    this->props.negativeButton = btn;
+    this->props.negativeButton = newButton(text, BUTTON_SIZE);
     return *this;
 }
 
