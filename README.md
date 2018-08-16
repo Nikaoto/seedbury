@@ -6,6 +6,7 @@ and compilation instructions.
 # TODO
 - [x] Add grass background
 - [ ] Update menu texture (round corners?)
+- [ ] Add fertility table to db
 - [x] Menu
   - [x] Menu/MenuPanel class
   - [x] Background dimming
@@ -14,8 +15,7 @@ and compilation instructions.
   - [x] Button support
     - [x] setPositiveButton(string text, function<void()> callback)
     - [x] setNegativeButton(string text, function<void()> callback)
-- [ ] Add harvest func when plant fully grown
-  - [ ] Add sql abstraction
+- [x] Add harvest func when plant fully grown
 - [ ] Plant menu
   - [x] Create plant class
     - [ ] Add description std::string
