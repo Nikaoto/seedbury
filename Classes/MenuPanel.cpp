@@ -56,11 +56,9 @@ bool MenuPanel::init() {
         this->addChild(drawNode, -1);
     }
     
-    // Tile texture
-    const auto tex = props.director->getTextureCache()->addImage(props.texturePath);
-    tex->setTexParameters({ GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_REPEAT });
-    const auto rect = cocos2d::Rect(0, 0, props.panelSize.width, props.panelSize.height);
-    this->initWithTexture(tex, rect);
+    // Stretch texture
+    this->setTexture(props.texturePath);
+    this->setContentSize(props.panelSize);
     
     // Text
     // Use custom ttf config if specified
