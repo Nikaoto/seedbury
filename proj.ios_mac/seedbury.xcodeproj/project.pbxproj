@@ -37,6 +37,7 @@
 		24EA4CE82108BC4B0080AB0F /* ui in Resources */ = {isa = PBXBuildFile; fileRef = 24EA4CE72108BC4B0080AB0F /* ui */; };
 		24EF40462122E13F00CAF731 /* grass_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24EF40442122E13F00CAF731 /* grass_background.jpg */; };
 		24EF404A2122ED7000CAF731 /* button_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 24EF40482122ED7000CAF731 /* button_normal.png */; };
+		24F374DE21259136009DFBFC /* menu_texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F374DD21259136009DFBFC /* menu_texture.png */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294D0D631D0D56D500F7F5D4 /* CoreText.framework */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
@@ -157,6 +158,7 @@
 		24EA4CE72108BC4B0080AB0F /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		24EF40442122E13F00CAF731 /* grass_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grass_background.jpg; sourceTree = "<group>"; };
 		24EF40482122ED7000CAF731 /* button_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_normal.png; path = ui/button_normal.png; sourceTree = "<group>"; };
+		24F374DD21259136009DFBFC /* menu_texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_texture.png; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		294D0D631D0D56D500F7F5D4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				24AFE2E321242BE4004B2BF4 /* plant_tomato_1.png */,
+				24F374DD21259136009DFBFC /* menu_texture.png */,
 				24AFE2E421242BE4004B2BF4 /* plant_tomato_2.png */,
 				24AFE2E521242BE4004B2BF4 /* plant_tomato_3.png */,
 				24EF40482122ED7000CAF731 /* button_normal.png */,
@@ -492,6 +495,7 @@
 				24EF404A2122ED7000CAF731 /* button_normal.png in Resources */,
 				1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */,
 				2467582121158A6E00914B02 /* menu_texture.jpg in Resources */,
+				24F374DE21259136009DFBFC /* menu_texture.png in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
