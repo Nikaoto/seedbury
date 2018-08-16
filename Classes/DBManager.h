@@ -23,6 +23,7 @@ public:
     
     // Queries
     void savePlant(int landNumber, unsigned long plantTime, std::string plantType);
+    void removePlant(int landNumber);
     Plant* getPlant(int landNumber);
     cocos2d::Map<int, Plant*> getPlants();
 protected:

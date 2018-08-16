@@ -71,6 +71,13 @@ void DBManager::savePlant(int landNumber, unsigned long plantTime, std::string p
     CCASSERT(result == SQLITE_OK, std::string("Failed sql command: ").append(query.str()).c_str());
 }
 
+void DBManager::removePlant(int landNumber) {
+    std::ostringstream query;
+    query << "DELETE FROM " << TABLE_PLANTS << " WHERE "<<COLUMN_LAND_NUMBER<<" = "<<landNumber<<";";
+    int result = sqlite3_exec(database, query.str().c_str(), NULL, NULL, NULL);
+    CCASSERT(result == SQLITE_OK, std::string("Failed sql command: ").append(query.str()).c_str());
+}
+
 Plant* DBManager::getPlant(int landNumber) {
     std::ostringstream query;
     query << "SELECT * FROM " << TABLE_PLANTS << " WHERE " << COLUMN_LAND_NUMBER << "=" << landNumber;
