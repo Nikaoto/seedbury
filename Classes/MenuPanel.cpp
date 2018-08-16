@@ -4,8 +4,8 @@
 #include "ui/CocosGUI.h"
 
 // Constants
-const cocos2d::Vec2 MenuPanel::TEXT_MARGIN = cocos2d::Vec2(30, 30);
-const cocos2d::Vec2 MenuPanel::BUTTON_MARGIN = cocos2d::Vec2(30, 30);
+const cocos2d::Vec2 MenuPanel::TEXT_MARGIN = cocos2d::Vec2(50, 50);
+const cocos2d::Vec2 MenuPanel::BUTTON_MARGIN = cocos2d::Vec2(50, 50);
 const cocos2d::Size MenuPanel::BUTTON_SIZE = cocos2d::Size(200, 140);
 
 MenuPanel* MenuPanel::create(MenuPanel::MenuProps& props) {
@@ -147,7 +147,7 @@ MenuPanel::Builder::Builder(cocos2d::Director* director) {
     this->props.backgroundDim = false;
     this->props.text = "";
     this->props.ttfConfig = nullptr;
-    this->props.texturePath = "menu_texture.jpg";
+    this->props.texturePath = "menu_texture.png";
     this->props.position = cocos2d::Vec2(0, 0);
     this->props.outsideClickCallback = nullptr;
     this->props.positiveButton = nullptr;
