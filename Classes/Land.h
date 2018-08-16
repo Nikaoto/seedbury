@@ -16,8 +16,9 @@ public:
     Land(int landNumber);
     bool init() override;
 
-    //
+    // Functions
     void plantPlant(std::string plantType);
+    void harvestPlant();
 
     // Getters and setters
     /// landNumber

@@ -51,7 +51,7 @@ bool Land::init() {
         if (getBoundingBox().containsPoint(touch->getLocation())) {
             if (isFertile()) {
 				if (plant != nullptr && plant->getGrowthStage() == plant->MAX_GROWTH_STAGE) {
-				    CCLOG("HARVEST");
+                    this->harvestPlant();
 				} else if (plant == nullptr) {
 				    CCLOG("OPEN PLANT MENU from plant %i", this->getLandNumber());
                     this->plantMenuCallback(this->getLandNumber());
@@ -75,6 +75,20 @@ void Land::plantPlant(std::string plantType) {
     setPlant(Plant::create(timeutil::getEpochSeconds(), plantType));
     // Save to db
     DBManager::getInstance()->savePlant(this->landNumber, plant->getPlantTime(), plant->getPlantType());
+}
+
+void Land::harvestPlant() {
+    CCLOG("HARVEST");
+    auto scale = EaseBackInOut::create(ScaleBy::create(0.5, 1.5));
+    auto fade = EaseCubicActionIn::create(FadeOut::create(0.5));
+    auto spawn = Spawn::create(scale, fade, nullptr); // Do fade & scale together
+    auto cb = CallFunc::create([&](){
+        this->removeChild(plant, true);
+        this->plant = nullptr;
+        DBManager::getInstance()->removePlant(this->landNumber);
+        CCLOG("HARVEST COMPLETE");
+    });
+    this->plant->runAction(Sequence::create(spawn, cb, nullptr));
 }
 
 void Land::setFertile(bool fertile){
@@ -102,7 +116,9 @@ const int Land::getLandNumber() {
 void Land::setPlant(Plant* plant) {
     if (plant != nullptr) {
         this->plant = &(*plant);
-        this->plant->setPosition(0, Plant::MARGIN_BOTTOM);
+        this->plant->setAnchorPoint(Vec2(0.5, 0));
+        const auto s = this->getContentSize();
+        this->plant->setPosition(s.width/2, Plant::MARGIN_BOTTOM);
         this->addChild(this->plant, 1);
     }
 }
