@@ -5,7 +5,7 @@ and compilation instructions.
 
 # TODO
 - [x] Add grass background
-- [ ] Update menu texture (round corners?)
+- [x] Update menu texture
 - [ ] Add fertility table to db
 - [x] Menu
   - [x] Menu/MenuPanel class
@@ -226,5 +226,14 @@ if (InternetStatus::isConnected()) {
 } else {
     InternetStatus::toastMessage("Please connect internet");
 }
+```
+
+## Tile texture on 2D plane (rect)
+```
+// Tile texture
+const auto tex = Director::getInstance()->getTextureCache()->addImage("path/to/tex.jpg");
+tex->setTexParameters({ GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_REPEAT });
+const auto rect = cocos2d::Rect(0, 0, rectSize.width, rectSize.height);
+this->initWithTexture(tex, rect);
 ```
 ---
