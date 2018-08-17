@@ -77,6 +77,10 @@ void Plant::setGrowthStage(const int stage) {
     }
     // Update texture
     this->setTexture(this->texturePaths[growthStage]);
+    // Glow if last stage
+    if (this->growthStage == MAX_GROWTH_STAGE) {
+        // Add glow sprite behind this
+    }
 }
 
 const int Plant::getGrowthStage() {

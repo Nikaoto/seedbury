@@ -95,12 +95,11 @@ bool MainScene::init() {
 
 void MainScene::triggerMenu() {
     if (this->menuPanel == nullptr) {
-        // Create panel
+        // Collect screen vars
         const auto director = Director::getInstance();
         const auto size = director->getVisibleSize();
         const auto origin = director->getVisibleOrigin();
-        
-        CCLOG("building MP");
+        // Create panel
         this->menuPanel = MenuPanel::Builder(director)
                 .setSize(size.width*0.8, size.height*0.8)
                 .setPosition(origin.x + size.width * 0.5, origin.y + size.height * 0.5)
@@ -112,8 +111,6 @@ void MainScene::triggerMenu() {
                     this->triggerMenu();
                 })
                 .build();
-        CCLOG("MP created");
-        CCLOG("adding mp as child");
         this->addChild(this->menuPanel, 3);
     } else {
         // Remove panel
