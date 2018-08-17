@@ -121,9 +121,7 @@ void MainScene::triggerMenu() {
 
 void MainScene::triggerPlantMenu(int senderLandNumber) {
     // Set selected land
-    CCLOG("AAAAAA");
     this->selectedLand = this->landVector.at(senderLandNumber);
-    CCLOG("UUUUU");
 
     // Pop up plant menu
     const auto s = Director::getInstance()->getVisibleSize();

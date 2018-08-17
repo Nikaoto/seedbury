@@ -32,7 +32,7 @@ bool Land::init() {
     if (!Sprite::init()) {
         return false;
     }
-    setTexture(INFERTILE_SPRITE);
+    setTexture(FERTILE_SPRITE);
     setAnchorPoint(Vec2(0, 1));
     setScale(SIZE.width / getContentSize().width, SIZE.height / getContentSize().height);
     // Load plant from db
@@ -44,6 +44,10 @@ bool Land::init() {
         plant = nullptr;
         fertile = false;
     }
+    
+    // Temporary (TODO: remove after adding fertility tracking)
+    setFertile(true);
+    
 
     // Set up listener
     auto listener = EventListenerTouchOneByOne::create();
