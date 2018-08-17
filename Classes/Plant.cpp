@@ -9,12 +9,12 @@ const int Plant::MAX_GROWTH_STAGE = 3;
 const int Plant::MARGIN_BOTTOM = 55;
 
 const std::string Plant::PLANT_TYPES[2] = {
-    "Standard", "Tomato"
+    "Eggplant", "Tomato"
 };
 
 const std::map<std::string, PlantData> Plant::PLANT_DATA = {
-    {PLANT_TYPES[0], PlantData(PLANT_TYPES[0], 10, new std::string[4] {"plant_0.png", "plant_1.png", "plant_2.png", "plant_3.png"})},
-    {PLANT_TYPES[1], PlantData(PLANT_TYPES[1], 3, new std::string[4] {"plant_0.png", "plant_tomato_1.png", "plant_tomato_2.png", "plant_tomato_3.png"})}
+    {PLANT_TYPES[0], PlantData(PLANT_TYPES[0], 5)},
+    {PLANT_TYPES[1], PlantData(PLANT_TYPES[1], 3)}
 };
 
 using namespace cocos2d;

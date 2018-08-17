@@ -1,5 +1,6 @@
 #pragma once
 #include "cocos2d.h"
+#include <iostream>
 
 struct PlantData {
     std::string type;
@@ -9,7 +10,26 @@ struct PlantData {
         this->type = type;
         this->growthTime = growthTime;
         this->texturePaths = texturePaths;
-    }
+    };
+    
+    PlantData(std::string type, int growthTime) {
+        this->type = type;
+        this->growthTime = growthTime;
+        
+        // Auto set texture paths based on type
+        const auto d = "plants/";
+        auto t = std::string(type);
+        // Lower case
+        for (int i = 0; i < t.length(); i++) {
+            t[i] = tolower(t[i]);
+        }
+        this->texturePaths = new std::string [4] {
+            std::string(d).append("standard_0.png"),
+            std::string(d).append(t).append("_1.png"),
+            std::string(d).append(t).append("_2.png"),
+            std::string(d).append(t).append("_3.png")
+        };
+    };
 };
 
 class Plant : public cocos2d::Sprite {
