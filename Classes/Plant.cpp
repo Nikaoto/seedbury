@@ -80,6 +80,10 @@ void Plant::setGrowthStage(const int stage) {
     // Glow if last stage
     if (this->growthStage == MAX_GROWTH_STAGE) {
         // Add glow sprite behind this
+        auto glowSprite = Sprite::create("glow.png");
+        glowSprite->setAnchorPoint(Vec2(0, 0));
+        glowSprite->setPosition(0, 0);
+        this->addChild(glowSprite, -1);
     }
 }
 
