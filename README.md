@@ -4,25 +4,15 @@ Follow cli reference
 and compilation instructions.
 
 # TODO
-- [x] Add grass background
-- [x] Update menu texture
 - [ ] Add fertility table to db
-- [x] Menu
-  - [x] Menu/MenuPanel class
-  - [x] Background dimming
-  - [x] Adjustable size
-  - [x] Builder pattern
-  - [x] Button support
-    - [x] setPositiveButton(string text, function<void()> callback)
-    - [x] setNegativeButton(string text, function<void()> callback)
-- [x] Add harvest func when plant fully grown
 - [ ] Plant menu
+  - [ ] Add cancel (x) button top right, float  / outside click
+    - [x] Add placeholder w/ full functionality
+  - [ ] Find/create design for scrollview
   - [x] Create plant class
     - [ ] Add description std::string
     - [x] Add sprout time
-  - [x] Add red plant placeholder + TomatoPlant class
-  - [ ] Add green plant placeholder + BroccoliSproutPlant class
-  - [x] Add scrolling menu w/ plant icons
+- [ ] Add green plant placeholder + BroccoliSproutPlant class
 
 # Notes
 ## UI touch listener
