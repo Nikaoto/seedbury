@@ -12,6 +12,7 @@ const std::string Plant::PLANT_TYPES[2] = {
     "Eggplant", "Tomato"
 };
 
+// Init global plant data for each type of plant
 const std::map<std::string, PlantData> Plant::PLANT_DATA = {
     {PLANT_TYPES[0], PlantData(PLANT_TYPES[0], 5)},
     {PLANT_TYPES[1], PlantData(PLANT_TYPES[1], 3)}

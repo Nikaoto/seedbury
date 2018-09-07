@@ -15,6 +15,7 @@
 #include "MenuPanel.h"
 
 using namespace cocos2d;
+#define len(arr) sizeof(arr) / sizeof(arr[0])
 
 bool MainScene::init() {
     if (!Scene::init()) {
@@ -123,34 +124,71 @@ void MainScene::triggerPlantMenu(int senderLandNumber) {
     // Set selected land
     this->selectedLand = this->landVector.at(senderLandNumber);
 
+    const auto plantCount = len(Plant::PLANT_TYPES);
     // Pop up plant menu
     const auto s = Director::getInstance()->getVisibleSize();
     const auto o = Director::getInstance()->getVisibleOrigin();
+    const auto scrollViewMargin = 30;
+    const auto plantButtonSize = Size(Plant::SIZE.width, Plant::SIZE.height);
+    const auto plantButtonMargin = 200;
     this->scrollView = ui::ScrollView::create();
     scrollView->setDirection(ui::ScrollView::Direction::HORIZONTAL);
     scrollView->setContentSize(Size(s.width, s.height));
-    scrollView->setInnerContainerSize(Size(s.width, Plant::SIZE.height));
+    scrollView->setInnerContainerSize(Size(
+        scrollViewMargin * 2 + plantCount * (plantButtonSize.width + plantButtonMargin) + plantButtonMargin,
+        s.height));
     scrollView->setBackGroundColorType(ui::Layout::BackGroundColorType::SOLID);
     scrollView->setBackGroundColor(Color3B::BLACK);
-    //scrollView->setBackGroundColorOpacity(127);
+    scrollView->setBackGroundColorOpacity(200);
+    scrollView->setSwallowTouches(true);
     scrollView->setBounceEnabled(true);
     scrollView->setAnchorPoint(Vec2(0.5, 0.5));
     scrollView->setPosition(Vec2(o.x + s.width/2, o.y + s.height/2));
 
     // Populate with plant buttons
-    unsigned int i = 0;
+    unsigned int i = 1;
     for (const auto& element : Plant::PLANT_DATA) {
         auto b = ui::Button::create(element.second.texturePaths[3]);
-        b->setPosition(Vec2(s.width*0.2 + i * Plant::SIZE.width + i * 200, scrollView->getContentSize().height/2));
-		b->addClickEventListener([&](Ref* target) {
-			this->selectedLand->plantPlant(element.second.type);
+        b->setPosition(Vec2(i * (plantButtonSize.width + plantButtonMargin), scrollView->getContentSize().height/2));
+        //b->setScale(,);
+        b->addClickEventListener([&](Ref* target) {
+            this->selectedLand->plantPlant(element.second.type);
             this->scrollView->removeFromParent();
             this->scrollView = nullptr;
             this->selectedLand = nullptr;
-		});
+            // Remove cancel button
+            if (this->scrollViewCancelButton != nullptr) {
+                this->scrollViewCancelButton->removeFromParent();
+                this->scrollViewCancelButton = nullptr;
+            }
+        });
         scrollView->addChild(b);
         i++;
     }
-
+    
+    // Add cancel button
+    this->scrollViewCancelButton = ui::Button::create();
+    auto scale = 3;
+    auto margin = Vec2(20, 20);
+    //cancelButton->loadTextureNormal("ui/share_button.png");
+    scrollViewCancelButton->setPressedActionEnabled(true);
+    scrollViewCancelButton->setZoomScale(0.3);
+    scrollViewCancelButton->setScale(scale);
+    scrollViewCancelButton->setTitleText("Cancel");
+    scrollViewCancelButton->setPosition(Vec2(
+        o.x + s.width - scrollViewCancelButton->getContentSize().width/2 * scale - margin.x,
+        o.y + s.height - scrollViewCancelButton->getContentSize().height/2 * scale - margin.y));
+    scrollViewCancelButton->addClickEventListener([&](Ref* sender) {
+        // Remove scollView
+        if (this->scrollView != nullptr) {
+            this->scrollView->removeFromParent();
+            this->scrollView = nullptr;
+        }
+        // Remove self (cancel button)
+        this->scrollViewCancelButton->removeFromParent();
+        this->scrollViewCancelButton = nullptr;
+    });
+    scrollViewCancelButton->setSwallowTouches(true);
     this->addChild(scrollView, 4);
+    this->addChild(scrollViewCancelButton, 4);
 }

@@ -15,6 +15,7 @@ protected:
     cocos2d::Vector<Land*> landVector;
     Land* selectedLand;
     cocos2d::ui::ScrollView* scrollView;
+    cocos2d::ui::Button* scrollViewCancelButton;
     cocos2d::ui::Button* statsButton;
     MenuPanel* menuPanel;
 };
