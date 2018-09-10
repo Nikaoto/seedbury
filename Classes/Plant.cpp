@@ -103,3 +103,7 @@ const unsigned long Plant::getPlantTime() {
 const std::string Plant::getPlantType() {
     return this->plantType;
 }
+
+const int Plant::getGrowthTime() {
+    return this->growthTime;
+}

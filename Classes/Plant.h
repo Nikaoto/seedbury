@@ -57,11 +57,13 @@ public:
     /// plantTime
     const unsigned long getPlantTime();
     void setPlantTime(const unsigned long plantTime);
-    // plantType
+    /// plantType
     const std::string getPlantType();
+    /// growthTime
+    const int getGrowthTime();
 protected:
     std::string* texturePaths;
-    int growthTime; // Time it takes to grow one stage
+    int growthTime; // Time it takes to grow one stage in seconds
     std::string plantType; // Type of plant
     int growthStage; // Current growth stage
     unsigned long plantTime; // When plant was planted
