@@ -26,13 +26,13 @@
 		245C84C8212C48810063049D /* glow.png in Resources */ = {isa = PBXBuildFile; fileRef = 245C84C6212C48810063049D /* glow.png */; };
 		2467582121158A6E00914B02 /* menu_texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2467581F21158A6E00914B02 /* menu_texture.jpg */; };
 		246758242115DF8000914B02 /* MenuPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 246758232115DF8000914B02 /* MenuPanel.cpp */; };
+		24ADC6F1214671DE009A28CD /* LocalNotification_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 24ADC6F0214671DE009A28CD /* LocalNotification_iOS.mm */; };
 		24BACE882110566700EE012C /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 24BACE872110566700EE012C /* sqlite3.c */; };
 		24C818BD211078E500887AF3 /* DBManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24C818BA211078E500887AF3 /* DBManager.cpp */; };
 		24EA4CDE2108B6E40080AB0F /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24EA4CDA2108B6E40080AB0F /* MainScene.cpp */; };
 		24EA4CE82108BC4B0080AB0F /* ui in Resources */ = {isa = PBXBuildFile; fileRef = 24EA4CE72108BC4B0080AB0F /* ui */; };
 		24EF40462122E13F00CAF731 /* grass_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24EF40442122E13F00CAF731 /* grass_background.jpg */; };
 		24EF404A2122ED7000CAF731 /* button_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 24EF40482122ED7000CAF731 /* button_normal.png */; };
-		24F374DE21259136009DFBFC /* menu_texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F374DD21259136009DFBFC /* menu_texture.png */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294D0D631D0D56D500F7F5D4 /* CoreText.framework */; };
 		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
@@ -136,6 +136,8 @@
 		2467581F21158A6E00914B02 /* menu_texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = menu_texture.jpg; sourceTree = "<group>"; };
 		246758222115DF7F00914B02 /* MenuPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuPanel.h; sourceTree = "<group>"; };
 		246758232115DF8000914B02 /* MenuPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuPanel.cpp; sourceTree = "<group>"; };
+		24ADC6EE214671DE009A28CD /* LocalNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalNotification.h; sourceTree = "<group>"; };
+		24ADC6F0214671DE009A28CD /* LocalNotification_iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LocalNotification_iOS.mm; sourceTree = "<group>"; };
 		24BACE862110566700EE012C /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 		24BACE872110566700EE012C /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
 		24C818BA211078E500887AF3 /* DBManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DBManager.cpp; sourceTree = "<group>"; };
@@ -146,7 +148,6 @@
 		24EA4CE72108BC4B0080AB0F /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		24EF40442122E13F00CAF731 /* grass_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grass_background.jpg; sourceTree = "<group>"; };
 		24EF40482122ED7000CAF731 /* button_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_normal.png; path = ui/button_normal.png; sourceTree = "<group>"; };
-		24F374DD21259136009DFBFC /* menu_texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_texture.png; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		294D0D631D0D56D500F7F5D4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
@@ -303,7 +304,6 @@
 			isa = PBXGroup;
 			children = (
 				245C84C6212C48810063049D /* glow.png */,
-				24F374DD21259136009DFBFC /* menu_texture.png */,
 				24EF40482122ED7000CAF731 /* button_normal.png */,
 				2467581F21158A6E00914B02 /* menu_texture.jpg */,
 				24EF40442122E13F00CAF731 /* grass_background.jpg */,
@@ -323,6 +323,8 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				24ADC6F0214671DE009A28CD /* LocalNotification_iOS.mm */,
+				24ADC6EE214671DE009A28CD /* LocalNotification.h */,
 				246758232115DF8000914B02 /* MenuPanel.cpp */,
 				246758222115DF7F00914B02 /* MenuPanel.h */,
 				2400E7ED21137B01008AB87C /* timeutil.h */,
@@ -474,7 +476,6 @@
 				1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */,
 				245C84C8212C48810063049D /* glow.png in Resources */,
 				2467582121158A6E00914B02 /* menu_texture.jpg in Resources */,
-				24F374DE21259136009DFBFC /* menu_texture.png in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				1AF87B891F6F781D007BE51C /* LaunchScreenBackground.png in Resources */,
@@ -509,6 +510,7 @@
 				24C818BD211078E500887AF3 /* DBManager.cpp in Sources */,
 				24BACE882110566700EE012C /* sqlite3.c in Sources */,
 				2428B255210CCDA500EB00DA /* Plant.cpp in Sources */,
+				24ADC6F1214671DE009A28CD /* LocalNotification_iOS.mm in Sources */,
 				1AF87B8B1F6F782A007BE51C /* RootViewController.mm in Sources */,
 				2422432B210B251B00A09A30 /* Land.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
