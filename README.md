@@ -9,8 +9,9 @@ and compilation instructions.
   - [ ] Plant description std::string
   - [ ] Cancel (x) button top right, float  / outside click
     - [x] Add placeholder w/ full functionality
-  - [ ] Wooden frame around each plant 
-  - [ ] Wooden frame for plant name above
+  - [x] Wooden frame around each plant
+    - [ ] New png resource
+  - [x] Plant name above
   - [ ] Wooden frame for plant info below
 - [ ] Add green plant placeholder + BroccoliSproutPlant class
 
