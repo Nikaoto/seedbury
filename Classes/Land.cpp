@@ -4,6 +4,7 @@
 #include "DBManager.h"
 #include "timeutil.h"
 #include "ui/CocosGUI.h"
+#include "LocalNotification.h"
 
 // Constants
 const cocos2d::Size Land::SIZE = cocos2d::Size(128, 128);
@@ -79,6 +80,8 @@ void Land::plantPlant(std::string plantType) {
     setPlant(Plant::create(timeutil::getEpochSeconds(), plantType));
     // Save to db
     DBManager::getInstance()->savePlant(this->landNumber, plant->getPlantTime(), plant->getPlantType());
+    // Schedule notification
+    //LocalNotification::schedule("Your plant has fully grown!", plant->getGrowthTime() * Plant::MAX_GROWTH_STAGE, 1);
 }
 
 void Land::harvestPlant() {
