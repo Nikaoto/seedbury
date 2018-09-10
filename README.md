@@ -6,12 +6,12 @@ and compilation instructions.
 # TODO
 - [ ] Add fertility table to db
 - [ ] Plant menu
-  - [ ] Add cancel (x) button top right, float  / outside click
+  - [ ] Plant description std::string
+  - [ ] Cancel (x) button top right, float  / outside click
     - [x] Add placeholder w/ full functionality
-  - [ ] Find/create design for scrollview
-  - [x] Create plant class
-    - [ ] Add description std::string
-    - [x] Add sprout time
+  - [ ] Wooden frame around each plant 
+  - [ ] Wooden frame for plant name above
+  - [ ] Wooden frame for plant info below
 - [ ] Add green plant placeholder + BroccoliSproutPlant class
 
 - [x] Add plant reap notification for ios 
