@@ -14,6 +14,13 @@ and compilation instructions.
     - [x] Add sprout time
 - [ ] Add green plant placeholder + BroccoliSproutPlant class
 
+** Must-have Features **
+- [ ] Local notification for water replacement (every 2 weeks)
+- [ ] In-app (custom) alert for fertilizer replacement (after reaping 9th plant for a side)
+- [ ] Local notification for light switch (every 12 hrs)
+- [ ] Local notification when a plant is ready to reap
+- [ ] Link to online shop
+
 # Notes
 ## UI touch listener
 ### With lambda
