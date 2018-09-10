@@ -129,8 +129,9 @@ void MainScene::triggerPlantMenu(int senderLandNumber) {
     const auto s = Director::getInstance()->getVisibleSize();
     const auto o = Director::getInstance()->getVisibleOrigin();
     const auto scrollViewMargin = 30;
-    const auto plantButtonSize = Size(Plant::SIZE.width, Plant::SIZE.height);
-    const auto plantButtonMargin = 200;
+    const auto plantButtonSize = Size(160, 160);
+    const auto plantButtonMargin = 80;
+    const auto plantTitleMargin = 45;
     this->scrollView = ui::ScrollView::create();
     scrollView->setDirection(ui::ScrollView::Direction::HORIZONTAL);
     scrollView->setContentSize(Size(s.width, s.height));
@@ -148,9 +149,14 @@ void MainScene::triggerPlantMenu(int senderLandNumber) {
     // Populate with plant buttons
     unsigned int i = 1;
     for (const auto& element : Plant::PLANT_DATA) {
+        // Create plant button
         auto b = ui::Button::create(element.second.texturePaths[3]);
-        b->setPosition(Vec2(i * (plantButtonSize.width + plantButtonMargin), scrollView->getContentSize().height/2));
-        //b->setScale(,);
+        b->setAnchorPoint(Vec2(0.5, 0.5));
+        b->setScale(plantButtonSize.width / b->getContentSize().width, plantButtonSize.height / b->getContentSize().height);
+        const auto buttonPosition = Vec2(i * (plantButtonSize.width + plantButtonMargin),
+            scrollView->getContentSize().height - scrollViewMargin - b->getContentSize().height * 0.5);
+        b->setPosition(buttonPosition);
+        // Click listener
         b->addClickEventListener([&](Ref* target) {
             this->selectedLand->plantPlant(element.second.type);
             this->scrollView->removeFromParent();
@@ -162,6 +168,21 @@ void MainScene::triggerPlantMenu(int senderLandNumber) {
                 this->scrollViewCancelButton = nullptr;
             }
         });
+        // Add wooden frame
+        auto plantFrame = Sprite::create("ui/wooden_frame.png");
+        const auto scaleMargin = Size(1, 1.2);
+        plantFrame->setScale(b->getContentSize().width / plantFrame->getContentSize().width * scaleMargin.width,
+            b->getContentSize().height / plantFrame->getContentSize().height * scaleMargin.height);
+        plantFrame->setAnchorPoint(Vec2(0.5, 0.5));
+        plantFrame->setPosition(Vec2(b->getContentSize().width/2, b->getContentSize().height/2));
+        b->addChild(plantFrame, -1);
+        // Add plant title text
+        auto plantTitle = Label::createWithSystemFont(element.second.type, "Arial", 30);
+        plantTitle->setScale(1 / b->getScaleX(), 1 / b->getScaleY());
+        plantTitle->setAnchorPoint(Vec2(0.5, 0));
+        plantTitle->setPosition(b->getContentSize().width / 2, b->getContentSize().height + plantTitleMargin);
+        b->addChild(plantTitle);
+        //
         scrollView->addChild(b);
         i++;
     }
