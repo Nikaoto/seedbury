@@ -147,7 +147,7 @@ MenuPanel::Builder::Builder(cocos2d::Director* director) {
     this->props.backgroundDim = false;
     this->props.text = "";
     this->props.ttfConfig = nullptr;
-    this->props.texturePath = "menu_texture.png";
+    this->props.texturePath = "ui/menu_texture.png";
     this->props.position = cocos2d::Vec2(0, 0);
     this->props.outsideClickCallback = nullptr;
     this->props.positiveButton = nullptr;
