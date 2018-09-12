@@ -10,6 +10,7 @@ private:
     int exec(const char* q) { return sqlite3_exec(database, q, NULL, NULL, NULL); };
     void openDatabase();
     void closeDatabase();
+    void resetDB();
 public:
     // Constants
     static const std::string DATABASE_NAME;

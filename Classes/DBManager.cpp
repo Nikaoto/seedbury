@@ -21,7 +21,8 @@ DBManager::DBManager() {
     // Create/open database
     openDatabase();
     // Create tables if not present
-    {
+    {   
+        //resetDB(); // USE ONLY IN DEV
         std::ostringstream query;
         query<<"CREATE TABLE IF NOT EXISTS "<<TABLE_PLANTS<<" ("<<COLUMN_ID<<" INTEGER PRIMARY KEY AUTOINCREMENT"
             <<", "<<COLUMN_LAND_NUMBER<<" INTEGER, "<<COLUMN_PLANT_TIME<<" INTEGER, "<<COLUMN_PLANT_TYPE<<" TEXT);";
@@ -118,4 +119,11 @@ cocos2d::Map<int, Plant*> DBManager::getPlants() {
     }
     sqlite3_finalize(stmt);
     return plantMap;
+}
+
+void DBManager::resetDB() {
+    std::ostringstream query;
+    query<<"DROP TABLE "<<TABLE_PLANTS;
+    int result = sqlite3_exec(database, query.str().c_str(), NULL, NULL, NULL);
+    CCASSERT(result == SQLITE_OK, "Failed drop Plants table!");
 }
