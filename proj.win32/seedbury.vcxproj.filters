@@ -74,6 +74,9 @@
     <ClInclude Include="..\Classes\timeutil.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\LocalNotification.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">
