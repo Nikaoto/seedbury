@@ -131,7 +131,7 @@ void MainScene::triggerPlantMenu(int senderLandNumber) {
     const auto scrollViewMargin = 30;
     const auto plantButtonSize = Size(160, 160);
     const auto plantButtonMargin = 80;
-    const auto plantTitleMargin = 45;
+    const auto plantTitleMargin = 70;
     this->scrollView = ui::ScrollView::create();
     scrollView->setDirection(ui::ScrollView::Direction::HORIZONTAL);
     scrollView->setContentSize(Size(s.width, s.height));
@@ -178,9 +178,9 @@ void MainScene::triggerPlantMenu(int senderLandNumber) {
         b->addChild(plantFrame, -1);
         // Add plant title text
         auto plantTitle = Label::createWithSystemFont(element.second.type, "Arial", 30);
-        plantTitle->setScale(1 / b->getScaleX(), 1 / b->getScaleY());
         plantTitle->setAnchorPoint(Vec2(0.5, 0));
         plantTitle->setPosition(b->getContentSize().width / 2, b->getContentSize().height + plantTitleMargin);
+        plantTitle->setScale(1 / b->getScaleX(), 1 / b->getScaleY());
         b->addChild(plantTitle);
         //
         scrollView->addChild(b);
