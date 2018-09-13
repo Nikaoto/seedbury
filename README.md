@@ -7,7 +7,7 @@ and compilation instructions.
 - [ ] Add fertility table to db
 - [ ] Plant menu
   - [ ] Plant description std::string
-  - [ ] Cancel (x) button top right, float  / outside click
+  - [x] Cancel (x) button top right, float  / outside click
     - [x] Add placeholder w/ full functionality
   - [x] Wooden frame around each plant
     - [ ] New png resource
