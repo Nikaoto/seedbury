@@ -8,6 +8,7 @@ public:
     static const cocos2d::Vec2 TEXT_MARGIN;
     static const cocos2d::Vec2 BUTTON_MARGIN;
     static const cocos2d::Size BUTTON_SIZE;
+    static const cocos2d::Size CANCEL_BUTTON_SIZE;
 private:
     class MenuProps {
         std::string text;

@@ -7,6 +7,7 @@
 const cocos2d::Vec2 MenuPanel::TEXT_MARGIN = cocos2d::Vec2(50, 50);
 const cocos2d::Vec2 MenuPanel::BUTTON_MARGIN = cocos2d::Vec2(50, 50);
 const cocos2d::Size MenuPanel::BUTTON_SIZE = cocos2d::Size(200, 140);
+const cocos2d::Size MenuPanel::CANCEL_BUTTON_SIZE = cocos2d::Size(85, 85);
 
 MenuPanel* MenuPanel::create(MenuPanel::MenuProps& props) {
     MenuPanel *pRet = new(std::nothrow) MenuPanel(props);
