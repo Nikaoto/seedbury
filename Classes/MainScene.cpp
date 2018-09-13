@@ -130,13 +130,13 @@ void MainScene::triggerPlantMenu(int senderLandNumber) {
     const auto o = Director::getInstance()->getVisibleOrigin();
     const auto scrollViewMargin = 30;
     const auto plantButtonSize = Size(160, 160);
-    const auto plantButtonMargin = 80;
+    const auto plantButtonMargin = Vec2(80, -20);
     const auto plantTitleMargin = 70;
     this->scrollView = ui::ScrollView::create();
     scrollView->setDirection(ui::ScrollView::Direction::HORIZONTAL);
     scrollView->setContentSize(Size(s.width, s.height));
     scrollView->setInnerContainerSize(Size(
-        scrollViewMargin * 2 + plantCount * (plantButtonSize.width + plantButtonMargin) + plantButtonMargin,
+        scrollViewMargin * 2 + plantCount * (plantButtonSize.width + plantButtonMargin.x) + plantButtonMargin.x,
         s.height));
     scrollView->setBackGroundColorType(ui::Layout::BackGroundColorType::SOLID);
     scrollView->setBackGroundColor(Color3B::BLACK);
@@ -153,8 +153,9 @@ void MainScene::triggerPlantMenu(int senderLandNumber) {
         auto b = ui::Button::create(element.second.texturePaths[3]);
         b->setAnchorPoint(Vec2(0.5, 0.5));
         b->setScale(plantButtonSize.width / b->getContentSize().width, plantButtonSize.height / b->getContentSize().height);
-        const auto buttonPosition = Vec2(i * (plantButtonSize.width + plantButtonMargin),
-            scrollView->getContentSize().height - scrollViewMargin - b->getContentSize().height * 0.5);
+        const auto buttonPosition = Vec2(
+            i * (plantButtonSize.width + plantButtonMargin.x),
+            scrollView->getContentSize().height - scrollViewMargin - b->getContentSize().height / 2 + + plantButtonMargin.y);
         b->setPosition(buttonPosition);
         // Click listener
         b->addClickEventListener([&](Ref* target) {
@@ -188,14 +189,12 @@ void MainScene::triggerPlantMenu(int senderLandNumber) {
     }
     
     // Add cancel button
-    this->scrollViewCancelButton = ui::Button::create();
-    auto scale = 3;
+    this->scrollViewCancelButton = ui::Button::create("ui/cancel_button.png");
+    auto scale = MenuPanel::CANCEL_BUTTON_SIZE.width / scrollViewCancelButton->getContentSize().width;
     auto margin = Vec2(20, 20);
-    //cancelButton->loadTextureNormal("ui/share_button.png");
     scrollViewCancelButton->setPressedActionEnabled(true);
     scrollViewCancelButton->setZoomScale(0.3);
     scrollViewCancelButton->setScale(scale);
-    scrollViewCancelButton->setTitleText("Cancel");
     scrollViewCancelButton->setPosition(Vec2(
         o.x + s.width - scrollViewCancelButton->getContentSize().width/2 * scale - margin.x,
         o.y + s.height - scrollViewCancelButton->getContentSize().height/2 * scale - margin.y));
