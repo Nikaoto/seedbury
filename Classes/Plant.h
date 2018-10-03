@@ -19,7 +19,7 @@ struct PlantData {
         // Auto set texture paths based on type
         const auto d = "plants/";
         auto t = std::string(type);
-        // Lower case
+        /// Plant name to lowercase
         for (int i = 0; i < t.length(); i++) {
             t[i] = tolower(t[i]);
         }

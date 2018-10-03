@@ -123,7 +123,6 @@ void MainScene::triggerMenu() {
 void MainScene::triggerPlantMenu(int senderLandNumber) {
     // Set selected land
     this->selectedLand = this->landVector.at(senderLandNumber);
-
     const auto plantCount = len(Plant::PLANT_TYPES);
     // Pop up plant menu
     const auto s = Director::getInstance()->getVisibleSize();
@@ -146,7 +145,7 @@ void MainScene::triggerPlantMenu(int senderLandNumber) {
     scrollView->setAnchorPoint(Vec2(0.5, 0.5));
     scrollView->setPosition(Vec2(o.x + s.width/2, o.y + s.height/2));
 
-    // Populate with plant buttons
+    // Populate plant menu with plant buttons
     unsigned int i = 1;
     for (const auto& element : Plant::PLANT_DATA) {
         // Create plant button
@@ -157,7 +156,7 @@ void MainScene::triggerPlantMenu(int senderLandNumber) {
             i * (plantButtonSize.width + plantButtonMargin.x),
             scrollView->getContentSize().height - scrollViewMargin - b->getContentSize().height / 2 + + plantButtonMargin.y);
         b->setPosition(buttonPosition);
-        // Click listener
+        // On plant button click
         b->addClickEventListener([&](Ref* target) {
             this->selectedLand->plantPlant(element.second.type);
             this->scrollView->removeFromParent();
