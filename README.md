@@ -3,30 +3,6 @@ Follow cli reference
 [here](http://www.cocos2d-x.org/docs/cocos2d-x/en/editors_and_tools/cocosCLTool.html) for building 
 and compilation instructions.
 
-# TODO
-- [ ] Add fertility table to db
-- [ ] Plant menu
-  - [ ] Plant description std::string
-  - [x] Cancel (x) button top right, float  / outside click
-    - [x] Add placeholder w/ full functionality
-  - [x] Wooden frame around each plant
-    - [ ] New png resource
-  - [x] Plant name above
-  - [ ] Wooden frame for plant info below
-- [ ] Add green plant placeholder + BroccoliSproutPlant class
-
-- [x] Add plant reap notification for ios 
-  - [ ] Test on device
-- [ ] Add plant reap notification for android
-  - [ ] Test on device
-
-**Must-have Features**
-- [ ] Local notification for water replacement (every 2 weeks)
-- [ ] In-app (custom) alert for fertilizer replacement (after reaping 9th plant for a side)
-- [ ] Local notification for light switch (every 12 hrs)
-- [ ] Local notification when a plant is ready to reap
-- [ ] Link to online shop
-
 # Notes
 ## UI touch listener
 ### With lambda
