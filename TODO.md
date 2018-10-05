@@ -16,6 +16,7 @@
 
 
 ### Design
+- [ ] Random grass around the level
 - [ ] Plant menu
   - [ ] Plant description std::string
   - [x] Cancel (x) button top right, float  / outside click
@@ -28,7 +29,7 @@
 
 ### Content
 - [ ] BroccoliSproutPlant class
-- [ ] Plant description `std::string` in PlantData struct (Plant.h)
+- [x] Plant description `std::string` in PlantData struct (Plant.h)
 - [ ] Edit plant info txt
 
 
