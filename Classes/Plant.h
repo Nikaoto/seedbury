@@ -5,16 +5,22 @@
 struct PlantData {
     std::string type;
     int growthTime;
+    std::string description;
     std::string* texturePaths;
-    PlantData(std::string type, int growthTime, std::string* texturePaths) {
+    
+    PlantData(std::string type, int growthTime, std::string description, std::string* texturePaths) {
         this->type = type;
         this->growthTime = growthTime;
+        this->description = description;
         this->texturePaths = texturePaths;
     };
     
     PlantData(std::string type, int growthTime) {
         this->type = type;
         this->growthTime = growthTime;
+        
+        // Default sample description
+        this->description = "Lorem Ipsum is simply dummy text of the printing and typesetting blah bluh industry";
         
         // Auto set texture paths based on type
         const auto d = "plants/";
